@@ -10,16 +10,16 @@
   overflow-x: hidden;
 
   &.collapsed {
-    width: 72px;
+    width: 52px;
   }
 }
 
 .collapse-toggle {
-  align-self: flex-end;
+  align-self: flex-start;
   margin: 4px;
 }
 
-.active-link {
+.tree-node:has(.active-link ) {
   background: var(--mat-sys-secondary-container, #e8def8);
 }
 
@@ -46,20 +46,6 @@
   align-items: center;
 }
 
-.tree-toggle {
-  flex: 0 0 auto;
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
-
-  mat-icon {
-    font-size: 20px;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-  }
-}
-
 .tree-leaf {
   display: flex;
   align-items: center;
@@ -68,6 +54,19 @@
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+
+  ::before {
+    content: '';
+    background-color: currentColor;
+    display: inline-block;
+    color : rgb(73, 69, 78);  
+    margin-left: 15px; 
+    margin-right: 15px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
 }
 
 .tree-label {
