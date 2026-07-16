@@ -1,0 +1,67 @@
+<nav class="sidebar" [class.collapsed]="collapsed()">
+  <button
+    mat-icon-button
+    class="collapse-toggle"
+    (click)="toggleCollapsed()"
+    [attr.aria-label]="collapsed() ? 'Déplier le menu' : 'Replier le menu'"
+  >
+    <mat-icon>{{ collapsed() ? 'chevron_right' : 'chevron_left' }}</mat-icon>
+  </button>
+
+  <mat-nav-list>
+    @for (item of navItems; track item.route) {
+      <a
+        mat-list-item
+        [routerLink]="item.route"
+        routerLinkActive="active-link"
+        [matTooltip]="collapsed() ? item.label : ''"
+        matTooltipPosition="right"
+      >
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        @if (!collapsed()) {
+          <span matListItemTitle>{{ item.label }}</span>
+        }
+      </a>
+    }
+  </mat-nav-list>
+
+  @if (!collapsed()) {
+    <mat-divider></mat-divider>
+
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="nav-tree">
+      <!-- Feuille : lien de navigation -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding [matTreeNodePaddingIndent]="14" class="tree-node">
+        <a
+          class="tree-leaf"
+          [routerLink]="node.route"
+          routerLinkActive="active-link"
+          [matTooltip]="node.name"
+          matTooltipPosition="right"
+          matTooltipShowDelay="300"
+        >
+          <span class="tree-label">{{ node.name }}</span>
+        </a>
+      </mat-tree-node>
+
+      <!-- Branche : nœud dépliable -->
+      <mat-tree-node
+        *matTreeNodeDef="let node; when: hasChild"
+        matTreeNodePadding
+        [matTreeNodePaddingIndent]="14"
+        class="tree-node tree-branch"
+      >
+        <button
+          mat-icon-button
+          matTreeNodeToggle
+          class="tree-toggle"
+          [attr.aria-label]="(treeControl.isExpanded(node) ? 'Replier ' : 'Déplier ') + node.name"
+        >
+          <mat-icon>{{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}</mat-icon>
+        </button>
+        <span class="tree-label" [matTooltip]="node.name" matTooltipPosition="right" matTooltipShowDelay="300">
+          {{ node.name }}
+        </span>
+      </mat-tree-node>
+    </mat-tree>
+  }
+</nav>

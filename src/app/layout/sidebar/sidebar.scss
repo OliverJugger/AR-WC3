@@ -1,0 +1,81 @@
+.sidebar {
+  width: 240px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-right: 1px solid var(--mat-sys-outline-variant, #e0e0e0);
+  background: var(--mat-sys-surface, #ffffff);
+  transition: width 0.2s ease;
+  overflow-x: hidden;
+
+  &.collapsed {
+    width: 72px;
+  }
+}
+
+.collapse-toggle {
+  align-self: flex-end;
+  margin: 4px;
+}
+
+.active-link {
+  background: var(--mat-sys-secondary-container, #e8def8);
+}
+
+.nav-tree {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 4px 0 8px;
+  background: transparent;
+}
+
+.tree-node {
+  min-height: 40px;
+  border-radius: 0 20px 20px 0;
+  margin-right: 8px;
+
+  &:hover {
+    background: var(--mat-sys-surface-container-highest, #e6e0e9);
+  }
+}
+
+.tree-branch {
+  display: flex;
+  align-items: center;
+}
+
+.tree-toggle {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+  }
+}
+
+.tree-leaf {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tree-label {
+  display: inline-block;
+  max-width: 148px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 0.875rem;
+}

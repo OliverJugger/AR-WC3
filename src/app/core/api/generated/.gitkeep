@@ -1,0 +1,5 @@
+Ce dossier est destiné au client généré par `npm run generate:api`
+(ng-openapi-gen) à partir de `openapi/openapi.yaml`. Il est vide par défaut :
+le projet utilise pour l'instant les clients écrits à la main dans
+`core/api/auth-api.ts` et `core/api/statistics-api.ts`, alignés sur le même
+contrat.

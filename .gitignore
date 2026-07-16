@@ -1,0 +1,42 @@
+# Dependencies
+/node_modules
+
+# Compiled output
+/dist
+/out-tsc
+/.angular/cache
+
+# Generated OpenAPI client (regenerated via `npm run generate:api`)
+# Comment the next line out if you prefer to commit the generated client
+# src/app/core/api/generated
+
+# Misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment overrides
+.env

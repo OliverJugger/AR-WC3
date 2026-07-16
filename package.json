@@ -1,0 +1,38 @@
+{
+  "name": "ar-wc3",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "generate:api": "ng-openapi-gen",
+    "mock": "echo 'Ouvrez mockoon/environment.json dans Mockoon Desktop et cliquez sur Start (port 3001)'"
+  },
+  "dependencies": {
+    "@angular/animations": "^21.2.0",
+    "@angular/cdk": "^21.2.0",
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/material": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@swimlane/ngx-charts": "^24.0.1",
+    "d3": "^7.9.0",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.6.3"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.0",
+    "@angular/cli": "^21.2.0",
+    "@angular/compiler-cli": "^21.2.0",
+    "@types/d3": "^7.4.3",
+    "@types/node": "^20.14.0",
+    "ng-openapi-gen": "^0.31.0",
+    "typescript": "~5.9.0"
+  }
+}

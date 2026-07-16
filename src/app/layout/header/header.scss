@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--mat-sys-outline-variant, #e0e0e0);
+  background: var(--mat-sys-surface, #ffffff);
+  flex-shrink: 0;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+  display: block;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.user-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.username {
+  font-weight: 500;
+}

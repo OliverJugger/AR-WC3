@@ -1,0 +1,103 @@
+{
+  "uuid": "8f2b6c1a-2f2e-4c1a-9d3e-1a2b3c4d5e6f",
+  "lastMigration": 32,
+  "name": "AR-WC3",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "1a1b1c1d-0001-4a1a-8a1a-000000000001",
+      "type": "http",
+      "documentation": "Authentifie un utilisateur (voir openapi/openapi.yaml - operationId: login). Renvoie toujours succès pour la démo.",
+      "method": "post",
+      "endpoint": "login",
+      "responses": [
+        {
+          "uuid": "1a1b1c1d-0001-4a1a-8a1a-000000000011",
+          "body": "{\n  \"success\": true,\n  \"token\": \"mock-jwt-token\",\n  \"user\": {\n    \"username\": \"olivier.mignot83\",\n    \"displayName\": \"Olivier Mignot\",\n    \"avatarInitials\": \"OM\"\n  }\n}",
+          "latency": 200,
+          "statusCode": 200,
+          "label": "Succès",
+          "headers": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "1a1b1c1d-0002-4a1a-8a1a-000000000002",
+      "type": "http",
+      "documentation": "Statistiques du tableau de bord (voir openapi/openapi.yaml - operationId: getStatistics). 4 séries de données inventées, une par graphique pie.",
+      "method": "get",
+      "endpoint": "statistics",
+      "responses": [
+        {
+          "uuid": "1a1b1c1d-0002-4a1a-8a1a-000000000021",
+          "body": "{\n  \"stat1\": [\n    { \"name\": \"Nord\", \"value\": 32 },\n    { \"name\": \"Sud\", \"value\": 21 },\n    { \"name\": \"Est\", \"value\": 18 },\n    { \"name\": \"Ouest\", \"value\": 29 }\n  ],\n  \"stat2\": [\n    { \"name\": \"Produit A\", \"value\": 40 },\n    { \"name\": \"Produit B\", \"value\": 25 },\n    { \"name\": \"Produit C\", \"value\": 15 },\n    { \"name\": \"Produit D\", \"value\": 20 }\n  ],\n  \"stat3\": [\n    { \"name\": \"Web\", \"value\": 55 },\n    { \"name\": \"Mobile\", \"value\": 30 },\n    { \"name\": \"Boutique\", \"value\": 15 }\n  ],\n  \"stat4\": [\n    { \"name\": \"Livrées\", \"value\": 60 },\n    { \"name\": \"En cours\", \"value\": 25 },\n    { \"name\": \"Annulées\", \"value\": 8 },\n    { \"name\": \"Retournées\", \"value\": 7 }\n  ]\n}",
+          "latency": 200,
+          "statusCode": 200,
+          "label": "Succès",
+          "headers": [
+            { "key": "Content-Type", "value": "application/json" }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    { "type": "route", "uuid": "1a1b1c1d-0001-4a1a-8a1a-000000000001" },
+    { "type": "route", "uuid": "1a1b1c1d-0002-4a1a-8a1a-000000000002" }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    { "key": "Content-Type", "value": "application/json" },
+    { "key": "Access-Control-Allow-Origin", "value": "*" }
+  ],
+  "proxyReqHeaders": [{ "key": "", "value": "" }],
+  "proxyResHeaders": [{ "key": "", "value": "" }],
+  "data": [],
+  "callbacks": []
+}

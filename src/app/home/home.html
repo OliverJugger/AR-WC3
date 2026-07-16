@@ -1,0 +1,31 @@
+<div class="home">
+  <h1>Tableau de bord</h1>
+
+  @if (loading()) {
+    <div class="home-loading">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+  } @else if (loadError()) {
+    <p class="home-error">Impossible de charger les statistiques.</p>
+  } @else {
+    <div class="charts-grid">
+      @for (chart of charts(); track chart.title) {
+        <mat-card class="chart-card">
+          <mat-card-header>
+            <mat-card-title>{{ chart.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ngx-charts-pie-chart
+              [results]="chart.data"
+              [scheme]="colorScheme"
+              [labels]="true"
+              [doughnut]="false"
+              [view]="[280, 220]"
+            >
+            </ngx-charts-pie-chart>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  }
+</div>
