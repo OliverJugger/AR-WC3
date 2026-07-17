@@ -12,15 +12,34 @@
   &.collapsed {
     width: 52px;
   }
+
+  .sidebar-header {
+    display: flex;
+  }
+
+  .sidebar-search {
+    margin-top : 15px;
+    margin-right : 10px;
+    margin-left : 5px;
+    font-size: 12px;
+  }
 }
 
 .collapse-toggle {
   align-self: flex-start;
-  margin: 4px;
+  margin-top: 15px;
+  margin-right: 7px;
+  margin-left: 7px;
 }
 
 .tree-node:has(.active-link ) {
   background: var(--mat-sys-secondary-container, #e8def8);
+}
+
+.tree-node:has(.highlighted) {
+  font-style: bold;
+  border: 1px solid red;
+  background-color: yellow;
 }
 
 .nav-tree {
@@ -59,7 +78,7 @@
     content: '';
     background-color: currentColor;
     display: inline-block;
-    color : rgb(73, 69, 78);  
+    color : rgb(73, 69, 78);
     margin-left: 15px; 
     margin-right: 15px;
     width: 7px;
@@ -71,7 +90,7 @@
 
 .tree-label {
   display: inline-block;
-  max-width: 148px;
+  max-width: 256px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

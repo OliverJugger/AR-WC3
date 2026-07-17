@@ -1,0 +1,3133 @@
+[
+  {
+    "name": "Accueil",
+    "code_arthus": "menu",
+    "route": "home"
+  },
+  {
+    "name": "Paramétrage",
+    "code_arthus": "PR01",
+    "children": [
+      {
+        "name": "Codification de base",
+        "code_arthus": "PR30",
+        "children": [
+          {
+            "name": "Codification utilisateur",
+            "code_arthus": "PA08",
+            "route": "parametrage/pa08"
+          },
+          {
+            "name": "Codification système",
+            "code_arthus": "PASY",
+            "children": [
+              {
+                "name": "Codification système",
+                "code_arthus": "PA36",
+                "route": "parametrage/pa36"
+              },
+              {
+                "name": "Codification système alphanumérique",
+                "code_arthus": "PA43",
+                "route": "parametrage/pa43"
+              }
+            ]
+          },
+          {
+            "name": "Codification utilisateur alphanumérique",
+            "code_arthus": "PA10",
+            "route": "parametrage/pa10"
+          },
+          {
+            "name": "Codification super système",
+            "code_arthus": "PASU",
+            "children": [
+              {
+                "name": "Aide sur les données utilisateur",
+                "code_arthus": "PA41",
+                "route": "parametrage/pa41"
+              },
+              {
+                "name": "Codification virtuelle numérique",
+                "code_arthus": "PA38",
+                "route": "parametrage/pa38"
+              },
+              {
+                "name": "Codification virtuelle alphanumérique",
+                "code_arthus": "PA40",
+                "route": "parametrage/pa40"
+              }
+            ]
+          },
+          {
+            "name": "Pays, devises",
+            "code_arthus": "PA00",
+            "children": [
+              {
+                "name": "Pays",
+                "code_arthus": "GR14",
+                "route": "parametrage/gr14"
+              },
+              {
+                "name": "Départements",
+                "code_arthus": "PA44",
+                "route": "parametrage/pa44"
+              },
+              {
+                "name": "Devises",
+                "code_arthus": "GR12",
+                "route": "parametrage/gr12"
+              },
+              {
+                "name": "Cours de change",
+                "code_arthus": "GR17",
+                "route": "parametrage/gr17"
+              }
+            ]
+          },
+          {
+            "name": "Editions \"Codification de base\"",
+            "code_arthus": "LBL0",
+            "children": [
+              {
+                "name": "Codification Utilisateur",
+                "code_arthus": "LBLUT",
+                "route": "parametrage/lblut"
+              },
+              {
+                "name": "Codification système",
+                "code_arthus": "LBLST",
+                "route": "parametrage/lblst"
+              },
+              {
+                "name": "Aide sur les données utilisateur",
+                "code_arthus": "LBLVT",
+                "route": "parametrage/lblvt"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Codification soins de santé",
+        "code_arthus": "GRME",
+        "children": [
+          {
+            "name": "Régimes de base",
+            "code_arthus": "GR01",
+            "route": "parametrage/gr01"
+          },
+          {
+            "name": "Paramétrage du parcours de soins",
+            "code_arthus": "PDME",
+            "children": [
+              {
+                "name": "Paramétrage des taux et plafonds",
+                "code_arthus": "GR06",
+                "route": "parametrage/gr06"
+              },
+              {
+                "name": "Spécialités médicales",
+                "code_arthus": "GR07",
+                "route": "parametrage/gr07"
+              },
+              {
+                "name": "Spécialités médicales exclues",
+                "code_arthus": "GR08",
+                "route": "parametrage/gr08"
+              }
+            ]
+          },
+          {
+            "name": "Familles/Actes",
+            "code_arthus": "GR04",
+            "route": "parametrage/gr04"
+          },
+          {
+            "name": "Liste des formules soins de santé",
+            "code_arthus": "GR10",
+            "route": "parametrage/gr10"
+          },
+          {
+            "name": "Secteurs d'activité",
+            "code_arthus": "GR13",
+            "route": "parametrage/gr13"
+          },
+          {
+            "name": "Formules de prestations soins de santé",
+            "code_arthus": "GR11",
+            "route": "parametrage/gr11"
+          },
+          {
+            "name": "Paramétrage des domaines Tiers payant",
+            "code_arthus": "PT10",
+            "route": "parametrage/pt10"
+          },
+          {
+            "name": "Editions \"Codification soins de santé\"",
+            "code_arthus": "CSS1",
+            "children": [
+              {
+                "name": "Codes actes",
+                "code_arthus": "BA04T",
+                "route": "parametrage/ba04t"
+              },
+              {
+                "name": "Tarifs avec historique des valeurs",
+                "code_arthus": "BA06T",
+                "route": "parametrage/ba06t"
+              },
+              {
+                "name": "Formules de prestation soins de santé",
+                "code_arthus": "BA17T",
+                "route": "parametrage/ba17t"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Paramétrage des portes externes",
+        "code_arthus": "PEME",
+        "children": [
+          {
+            "name": "Paramétrage des portes externes",
+            "code_arthus": "PE01",
+            "route": "parametrage/pe01"
+          },
+          {
+            "name": "Transcodification des actes",
+            "code_arthus": "PE23",
+            "route": "parametrage/pe23"
+          },
+          {
+            "name": "Zones de tarification",
+            "code_arthus": "PE16",
+            "route": "parametrage/pe16"
+          },
+          {
+            "name": "Actes d'un régime",
+            "code_arthus": "PE13",
+            "route": "parametrage/pe13"
+          },
+          {
+            "name": "Paramétrage des I.E.M.I.E.",
+            "code_arthus": "PE21",
+            "route": "parametrage/pe21"
+          }
+        ]
+      },
+      {
+        "name": "Transcodifications externes",
+        "code_arthus": "EX34",
+        "route": "parametrage/ex34"
+      },
+      {
+        "name": "Courriers, extractions",
+        "code_arthus": "CR00",
+        "children": [
+          {
+            "name": "Définition des modèles de courrier",
+            "code_arthus": "CR07",
+            "route": "parametrage/cr07"
+          },
+          {
+            "name": "Définition des messages de courriers",
+            "code_arthus": "MS02",
+            "route": "parametrage/ms02"
+          },
+          {
+            "name": "Opérations de gestion \"Courriers\"",
+            "code_arthus": "CR17",
+            "route": "parametrage/cr17"
+          },
+          {
+            "name": "Organisation des courriers",
+            "code_arthus": "CR12",
+            "route": "parametrage/cr12"
+          },
+          {
+            "name": "Edition des modèles de courriers généraux",
+            "code_arthus": "CR01T",
+            "route": "parametrage/cr01t"
+          }
+        ]
+      },
+      {
+        "name": "Formules, indices, tableaux, ...",
+        "code_arthus": "VA00",
+        "children": [
+          {
+            "name": "Fonctions, opérateurs, données système",
+            "code_arthus": "VA08",
+            "route": "parametrage/va08"
+          },
+          {
+            "name": "Formules de calcul",
+            "code_arthus": "VA05",
+            "route": "parametrage/va05"
+          },
+          {
+            "name": "Conditions",
+            "code_arthus": "VA01",
+            "route": "parametrage/va01"
+          },
+          {
+            "name": "Indices",
+            "code_arthus": "GR03",
+            "route": "parametrage/gr03"
+          },
+          {
+            "name": "Tableaux",
+            "code_arthus": "VA04",
+            "route": "parametrage/va04"
+          },
+          {
+            "name": "Tableaux à double entrée",
+            "code_arthus": "VA06",
+            "route": "parametrage/va06"
+          },
+          {
+            "name": "Données utilisateur",
+            "code_arthus": "VA07",
+            "route": "parametrage/va07"
+          },
+          {
+            "name": "Editions \"Formules, indices, tableaux, ...\"",
+            "code_arthus": "VAE1",
+            "children": [
+              {
+                "name": "Fonctions, opérateurs, données système ...",
+                "code_arthus": "BA09T",
+                "route": "parametrage/ba09t"
+              },
+              {
+                "name": "Formules",
+                "code_arthus": "BA10T",
+                "route": "parametrage/ba10t"
+              },
+              {
+                "name": "Indices",
+                "code_arthus": "BA03T",
+                "route": "parametrage/ba03t"
+              },
+              {
+                "name": "Tableaux",
+                "code_arthus": "BA11T",
+                "route": "parametrage/ba11t"
+              },
+              {
+                "name": "Données utilisateur",
+                "code_arthus": "BA12T",
+                "route": "parametrage/ba12t"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Utilisateurs, périphériques, habilitations",
+        "code_arthus": "PR31",
+        "children": [
+          {
+            "name": "Supports, périphériques",
+            "code_arthus": "BA30",
+            "children": [
+              {
+                "name": "Supports d'impression",
+                "code_arthus": "BA01",
+                "route": "parametrage/ba01"
+              },
+              {
+                "name": "Périphériques d'impression",
+                "code_arthus": "BA03",
+                "route": "parametrage/ba03"
+              },
+              {
+                "name": "Périphériques / utilisateur",
+                "code_arthus": "BA05",
+                "route": "parametrage/ba05"
+              },
+              {
+                "name": "Liste des supports d'impression",
+                "code_arthus": "BA02",
+                "route": "parametrage/ba02"
+              }
+            ]
+          },
+          {
+            "name": "Gestion des profils d'habilitation",
+            "code_arthus": "GU01",
+            "route": "parametrage/gu01"
+          },
+          {
+            "name": "Liste des utilisateurs",
+            "code_arthus": "GU05",
+            "route": "parametrage/gu05"
+          },
+          {
+            "name": "Identification des utilisateurs",
+            "code_arthus": "GU04",
+            "route": "parametrage/gu04"
+          },
+          {
+            "name": "Edition des utilisateurs",
+            "code_arthus": "BA07T",
+            "route": "parametrage/ba07t"
+          },
+          {
+            "name": "Edition des profils d'habilitation",
+            "code_arthus": "BA13T",
+            "route": "parametrage/ba13t"
+          }
+        ]
+      },
+      {
+        "name": "Sociétés de gestion",
+        "code_arthus": "SO01",
+        "children": [
+          {
+            "name": "Identification d'une société",
+            "code_arthus": "SO10",
+            "route": "parametrage/so10"
+          },
+          {
+            "name": "Liste des sociétés",
+            "code_arthus": "PE59",
+            "route": "parametrage/pe59"
+          },
+          {
+            "name": "Liste des comptes bancaires",
+            "code_arthus": "SO15",
+            "route": "parametrage/so15"
+          },
+          {
+            "name": "Liste des modalités de paiement",
+            "code_arthus": "SO22",
+            "route": "parametrage/so22"
+          },
+          {
+            "name": "Liste des comptes de paiement",
+            "code_arthus": "SO23",
+            "route": "parametrage/so23"
+          }
+        ]
+      },
+      {
+        "name": "Comptabilité",
+        "code_arthus": "CM2M",
+        "children": [
+          {
+            "name": "Opérations comptables",
+            "code_arthus": "CM01",
+            "route": "parametrage/cm01"
+          },
+          {
+            "name": "Schémas comptables",
+            "code_arthus": "SO30",
+            "route": "parametrage/so30"
+          },
+          {
+            "name": "Comptes de trésorerie",
+            "code_arthus": "SO12",
+            "route": "parametrage/so12"
+          },
+          {
+            "name": "Comptes comptables",
+            "code_arthus": "SO25",
+            "route": "parametrage/so25"
+          },
+          {
+            "name": "Comptes de décaissement",
+            "code_arthus": "CM13",
+            "route": "parametrage/cm13"
+          }
+        ]
+      },
+      {
+        "name": "Interfaces",
+        "code_arthus": "ITM1",
+        "children": [
+          {
+            "name": "Paramétrage des interfaces - Importation",
+            "code_arthus": "IT03",
+            "route": "parametrage/it03"
+          }
+        ]
+      },
+      {
+        "name": "Système",
+        "code_arthus": "SY01",
+        "children": [
+          {
+            "name": "Traitements, éditions",
+            "code_arthus": "SY02",
+            "children": [
+              {
+                "name": "Traitements",
+                "code_arthus": "BA08",
+                "route": "parametrage/ba08"
+              },
+              {
+                "name": "Editions",
+                "code_arthus": "BA06",
+                "route": "parametrage/ba06"
+              },
+              {
+                "name": "Edition de la liste des traitements",
+                "code_arthus": "BA01T",
+                "route": "parametrage/ba01t"
+              },
+              {
+                "name": "Edition de la liste des éditions",
+                "code_arthus": "BA14T",
+                "route": "parametrage/ba14t"
+              },
+              {
+                "name": "Fiches traitement",
+                "code_arthus": "BA02T",
+                "route": "parametrage/ba02t"
+              }
+            ]
+          },
+          {
+            "name": "Menu, navigation contextuelle",
+            "code_arthus": "SY03",
+            "children": [
+              {
+                "name": "Gestion du Menu",
+                "code_arthus": "AP01",
+                "route": "parametrage/ap01"
+              },
+              {
+                "name": "Gestion de la navigation contextuelle",
+                "code_arthus": "NC02",
+                "route": "parametrage/nc02"
+              }
+            ]
+          },
+          {
+            "name": "Modèle de données",
+            "code_arthus": "MPM1",
+            "children": [
+              {
+                "name": "Entités de base",
+                "code_arthus": "NC06",
+                "route": "parametrage/nc06"
+              },
+              {
+                "name": "Entités logiques",
+                "code_arthus": "NC07",
+                "route": "parametrage/nc07"
+              },
+              {
+                "name": "Entités physiques",
+                "code_arthus": "NC05",
+                "route": "parametrage/nc05"
+              },
+              {
+                "name": "Groupes de données \"Courrier\" et \"Extraction\"",
+                "code_arthus": "NC04",
+                "route": "parametrage/nc04"
+              },
+              {
+                "name": "Tables oracle",
+                "code_arthus": "MP10",
+                "route": "parametrage/mp10"
+              }
+            ]
+          },
+          {
+            "name": "Paramètres système",
+            "code_arthus": "PRMT",
+            "route": "parametrage/prmt"
+          },
+          {
+            "name": "Courriers et extractions",
+            "code_arthus": "CRM1",
+            "children": [
+              {
+                "name": "Définition des types de courrier",
+                "code_arthus": "NC08",
+                "route": "parametrage/nc08"
+              },
+              {
+                "name": "Définition des types de paragraphe",
+                "code_arthus": "NC12",
+                "route": "parametrage/nc12"
+              },
+              {
+                "name": "Définition des types d'extraction",
+                "code_arthus": "NC11",
+                "route": "parametrage/nc11"
+              }
+            ]
+          },
+          {
+            "name": "Paramètres serveurs",
+            "code_arthus": "BA26",
+            "route": "parametrage/ba26"
+          },
+          {
+            "name": "Messages système",
+            "code_arthus": "MS01",
+            "route": "parametrage/ms01"
+          },
+          {
+            "name": "Sessions ORACLE",
+            "code_arthus": "SS01",
+            "route": "parametrage/ss01"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Personnes",
+    "code_arthus": "P000",
+    "children": [
+      {
+        "name": "Personnes",
+        "code_arthus": "PE00",
+        "children": [
+          {
+            "name": "Identification d'une personne",
+            "code_arthus": "PE10",
+            "route": "personnes/pe10"
+          },
+          {
+            "name": "Liste des personnes",
+            "code_arthus": "PE50",
+            "route": "personnes/pe50"
+          },
+          {
+            "name": "Editions \"Personnes\"",
+            "code_arthus": "PE2M",
+            "children": [
+              {
+                "name": "Personnes par rôle",
+                "code_arthus": "PE11T",
+                "route": "personnes/pe11t"
+              },
+              {
+                "name": "Personnes dépendantes de ... selon type dépendance",
+                "code_arthus": "PE14T",
+                "route": "personnes/pe14t"
+              },
+              {
+                "name": "Fiche signalétique personne",
+                "code_arthus": "PE13T",
+                "route": "personnes/pe13t"
+              },
+              {
+                "name": "Ed. Historique des references bancaires",
+                "code_arthus": "PE15T",
+                "route": "personnes/pe15t"
+              }
+            ]
+          },
+          {
+            "name": "Droit à l'effacement",
+            "code_arthus": "PU04T",
+            "route": "personnes/pu04t"
+          }
+        ]
+      },
+      {
+        "name": "Assurés",
+        "code_arthus": "PR33",
+        "children": [
+          {
+            "name": "Identification d'un groupe familial",
+            "code_arthus": "GA01",
+            "route": "personnes/ga01"
+          },
+          {
+            "name": "Liste des assurés principaux",
+            "code_arthus": "PE57",
+            "route": "personnes/pe57"
+          },
+          {
+            "name": "Liste des affiliés",
+            "code_arthus": "PE58",
+            "route": "personnes/pe58"
+          },
+          {
+            "name": "Editions \"Assurés\"",
+            "code_arthus": "AS00",
+            "children": [
+              {
+                "name": "Assurés par contrat d'une société",
+                "code_arthus": "AS03T",
+                "route": "personnes/as03t"
+              },
+              {
+                "name": "Assurés par contrat d'un organisme",
+                "code_arthus": "AS04T",
+                "route": "personnes/as04t"
+              },
+              {
+                "name": "Assurés par contrat d'un produit",
+                "code_arthus": "AS05T",
+                "route": "personnes/as05t"
+              },
+              {
+                "name": "Assurés par contrat d'un souscripteur",
+                "code_arthus": "AS06T",
+                "route": "personnes/as06t"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Clients",
+        "code_arthus": "CL00",
+        "children": [
+          {
+            "name": "Adhérents individuels",
+            "code_arthus": "CL02",
+            "children": [
+              {
+                "name": "Identification d'un adhérent individuel",
+                "code_arthus": "PE22",
+                "route": "personnes/pe22"
+              },
+              {
+                "name": "Liste des adhérents individuels",
+                "code_arthus": "PE53",
+                "route": "personnes/pe53"
+              }
+            ]
+          },
+          {
+            "name": "Adhérents collectifs",
+            "code_arthus": "CL04",
+            "children": [
+              {
+                "name": "Identification d'un adhérent collectif",
+                "code_arthus": "PE20",
+                "route": "personnes/pe20"
+              },
+              {
+                "name": "Liste des adhérents collectifs",
+                "code_arthus": "PE66",
+                "route": "personnes/pe66"
+              }
+            ]
+          },
+          {
+            "name": "Souscripteurs",
+            "code_arthus": "CL01",
+            "children": [
+              {
+                "name": "Identification d'un souscripteur",
+                "code_arthus": "PE19",
+                "route": "personnes/pe19"
+              },
+              {
+                "name": "Liste des souscripteurs",
+                "code_arthus": "PE52",
+                "route": "personnes/pe52"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tiers",
+        "code_arthus": "TI00",
+        "children": [
+          {
+            "name": "Prestataires médicaux",
+            "code_arthus": "TI01",
+            "children": [
+              {
+                "name": "Identification d'un prestataire médical",
+                "code_arthus": "GT06",
+                "route": "personnes/gt06"
+              },
+              {
+                "name": "Liste des prestataires médicaux",
+                "code_arthus": "PE60",
+                "route": "personnes/pe60"
+              },
+              {
+                "name": "Secteur d'activité des prestataires médicaux",
+                "code_arthus": "GT04",
+                "route": "personnes/gt04"
+              },
+              {
+                "name": "Recherche prestataires médicaux",
+                "code_arthus": "PE12",
+                "route": "personnes/pe12"
+              }
+            ]
+          },
+          {
+            "name": "Intermédiaires",
+            "code_arthus": "PR20",
+            "children": [
+              {
+                "name": "Identification d'un intermédiaire",
+                "code_arthus": "PR21",
+                "route": "personnes/pr21"
+              },
+              {
+                "name": "Liste des intermédiaires",
+                "code_arthus": "PE56",
+                "route": "personnes/pe56"
+              }
+            ]
+          },
+          {
+            "name": "Organismes Tiers payants",
+            "code_arthus": "TI02",
+            "children": [
+              {
+                "name": "Identification d'un organisme Tiers payant",
+                "code_arthus": "GT01",
+                "route": "personnes/gt01"
+              },
+              {
+                "name": "Liste des organismes Tiers payant",
+                "code_arthus": "PE61",
+                "route": "personnes/pe61"
+              }
+            ]
+          },
+          {
+            "name": "Assureurs",
+            "code_arthus": "GR00",
+            "children": [
+              {
+                "name": "Identification d'un Assureur",
+                "code_arthus": "GR05",
+                "route": "personnes/gr05"
+              },
+              {
+                "name": "Liste des Assureurs",
+                "code_arthus": "PE55",
+                "route": "personnes/pe55"
+              }
+            ]
+          },
+          {
+            "name": "Interlocuteurs",
+            "code_arthus": "TI03",
+            "children": [
+              {
+                "name": "Identification d'un interlocuteur",
+                "code_arthus": "PE38",
+                "route": "personnes/pe38"
+              },
+              {
+                "name": "Liste des interlocuteurs",
+                "code_arthus": "PE39",
+                "route": "personnes/pe39"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Recherche multi-critère d'une personne",
+        "code_arthus": "PE12",
+        "route": "personnes/pe12"
+      }
+    ]
+  },
+  {
+    "name": "Production",
+    "code_arthus": "C000",
+    "children": [
+      {
+        "name": "Produits",
+        "code_arthus": "PR00",
+        "children": [
+          {
+            "name": "Identification d'un produit",
+            "code_arthus": "PR07",
+            "route": "production/pr07"
+          },
+          {
+            "name": "Liste des produits",
+            "code_arthus": "PR06",
+            "route": "production/pr06"
+          },
+          {
+            "name": "Edition des actes des garanties d'un produit",
+            "code_arthus": "PR15T",
+            "route": "production/pr15t"
+          }
+        ]
+      },
+      {
+        "name": "Contrats",
+        "code_arthus": "C001",
+        "children": [
+          {
+            "name": "Identification d'un contrat",
+            "code_arthus": "GC01",
+            "route": "production/gc01"
+          },
+          {
+            "name": "Liste des contrats",
+            "code_arthus": "GA11",
+            "route": "production/ga11"
+          },
+          {
+            "name": "Editions \"Contrats\"",
+            "code_arthus": "C002",
+            "children": [
+              {
+                "name": "Contrats par code situation",
+                "code_arthus": "C004",
+                "children": [
+                  {
+                    "name": "Contrats d'une société",
+                    "code_arthus": "PR01T",
+                    "route": "production/pr01t"
+                  },
+                  {
+                    "name": "Contrats d'un organisme assureur",
+                    "code_arthus": "PR07T",
+                    "route": "production/pr07t"
+                  },
+                  {
+                    "name": "Contrats d'un produit",
+                    "code_arthus": "PR08T",
+                    "route": "production/pr08t"
+                  },
+                  {
+                    "name": "Contrats d'un souscripteur",
+                    "code_arthus": "PR09T",
+                    "route": "production/pr09t"
+                  }
+                ]
+              },
+              {
+                "name": "Contrats avec historique des situations",
+                "code_arthus": "C005",
+                "children": [
+                  {
+                    "name": "Contrats d'une société",
+                    "code_arthus": "PR02T",
+                    "route": "production/pr02t"
+                  },
+                  {
+                    "name": "Contrats d'un organisme assureur",
+                    "code_arthus": "PR10T",
+                    "route": "production/pr10t"
+                  },
+                  {
+                    "name": "Contrats d'un produit",
+                    "code_arthus": "PR11T",
+                    "route": "production/pr11t"
+                  },
+                  {
+                    "name": "Contrats d'un souscripteur",
+                    "code_arthus": "PR12T",
+                    "route": "production/pr12t"
+                  }
+                ]
+              },
+              {
+                "name": "Actes des garanties d'un contrat",
+                "code_arthus": "PR16T",
+                "route": "production/pr16t"
+              },
+              {
+                "name": "Demande de pièces",
+                "code_arthus": "GC02T",
+                "route": "production/gc02t"
+              },
+              {
+                "name": "Renouvellement de pièces",
+                "code_arthus": "GC03T",
+                "route": "production/gc03t"
+              }
+            ]
+          },
+          {
+            "name": "Gestion contrat",
+            "code_arthus": "C007",
+            "children": [
+              {
+                "name": "Résiliation des adhésions d'un contrat",
+                "code_arthus": "TR15T",
+                "route": "production/tr15t"
+              }
+            ]
+          },
+          {
+            "name": "Mise a jours des mdp EA",
+            "code_arthus": "MDP1T",
+            "route": "production/mdp1t"
+          }
+        ]
+      },
+      {
+        "name": "Adhésions collectives",
+        "code_arthus": "AC00",
+        "children": [
+          {
+            "name": "Instruction sinistre (b)",
+            "code_arthus": "PV36B",
+            "route": "production/pv36b"
+          },
+          {
+            "name": "Identification d'une adhésion individuelle",
+            "code_arthus": "AD01",
+            "route": "production/ad01"
+          },
+          {
+            "name": "Gestion des affiliations externes",
+            "code_arthus": "AF06",
+            "route": "production/af06"
+          },
+          {
+            "name": "Liste des remises d'importation des affiliations",
+            "code_arthus": "AF03",
+            "route": "production/af03"
+          },
+          {
+            "name": "Identification d'une adhésion collective",
+            "code_arthus": "GC11",
+            "route": "production/gc11"
+          },
+          {
+            "name": "Liste des adhésions collectives",
+            "code_arthus": "GC16",
+            "route": "production/gc16"
+          }
+        ]
+      },
+      {
+        "name": "Adhésions individuelles",
+        "code_arthus": "AD00",
+        "children": [
+          {
+            "name": "Identification d'une adhésion individuelle",
+            "code_arthus": "AD01",
+            "route": "production/ad01"
+          },
+          {
+            "name": "Liste des adhérents individuels",
+            "code_arthus": "GA21",
+            "route": "production/ga21"
+          },
+          {
+            "name": "Liste des adhésions individuelles",
+            "code_arthus": "AD11",
+            "route": "production/ad11"
+          },
+          {
+            "name": "Editions \"Adhésions individuelles\"",
+            "code_arthus": "ADE0",
+            "children": [
+              {
+                "name": "Adhésions par code situation",
+                "code_arthus": "C003",
+                "children": [
+                  {
+                    "name": "Adhésions d'un contrat",
+                    "code_arthus": "PR05T",
+                    "route": "production/pr05t"
+                  },
+                  {
+                    "name": "Adhésions d'un adhérent",
+                    "code_arthus": "PR06T",
+                    "route": "production/pr06t"
+                  }
+                ]
+              },
+              {
+                "name": "Adhésions avec historique situation",
+                "code_arthus": "C006",
+                "children": [
+                  {
+                    "name": "Adhésions d'un contrat",
+                    "code_arthus": "PR04T",
+                    "route": "production/pr04t"
+                  },
+                  {
+                    "name": "Adhésions d'un adhérent",
+                    "code_arthus": "PR13T",
+                    "route": "production/pr13t"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Gestion des relances",
+            "code_arthus": "ADR0",
+            "children": [
+              {
+                "name": "Demande de pièces - ADE0",
+                "code_arthus": "AD02T",
+                "route": "production/ad02t"
+              },
+              {
+                "name": "Renouvellement de pièces",
+                "code_arthus": "AD03T",
+                "route": "production/ad03t"
+              },
+              {
+                "name": "Création automatisée de pièces",
+                "code_arthus": "AD30T",
+                "route": "production/ad30t"
+              },
+              {
+                "name": "Blocage automatisé de pièces",
+                "code_arthus": "AD31T",
+                "route": "production/ad31t"
+              }
+            ]
+          },
+          {
+            "name": "Cloture accès extranet",
+            "code_arthus": "IT05T",
+            "route": "production/it05t"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cotisations",
+    "code_arthus": "PR03",
+    "children": [
+      {
+        "name": "Consultation des cotisations",
+        "code_arthus": "PR34",
+        "children": [
+          {
+            "name": "Suivi des cotisations",
+            "code_arthus": "QG03",
+            "route": "cotisations/qg03"
+          },
+          {
+            "name": "Détail du calcul",
+            "code_arthus": "QG06",
+            "route": "cotisations/qg06"
+          }
+        ]
+      },
+      {
+        "name": "Calculs des cotisations",
+        "code_arthus": "PR35",
+        "children": [
+          {
+            "name": "Calcul des cotisations \"Termes\" Contrat",
+            "code_arthus": "QG01T",
+            "route": "cotisations/qg01t"
+          },
+          {
+            "name": "Calcul des cotisations \"Termes\" Contrat Echu",
+            "code_arthus": "QG63T",
+            "route": "cotisations/qg63t"
+          },
+          {
+            "name": "Calcul des cotisations \"Termes\" Contrat à Echoir",
+            "code_arthus": "QG64T",
+            "route": "cotisations/qg64t"
+          },
+          {
+            "name": "Calcul des cotisations \"Termes\" adhe. collectives",
+            "code_arthus": "QG15T",
+            "route": "cotisations/qg15t"
+          },
+          {
+            "name": "Régularisation des cotisations",
+            "code_arthus": "QG14T",
+            "route": "cotisations/qg14t"
+          },
+          {
+            "name": "Edition des anomalies de calcul",
+            "code_arthus": "QT24T",
+            "route": "cotisations/qt24t"
+          },
+          {
+            "name": "Calcul massif à blanc des cotisations",
+            "code_arthus": "QG17T",
+            "route": "cotisations/qg17t"
+          }
+        ]
+      },
+      {
+        "name": "Relances des cotisations",
+        "code_arthus": "RL01",
+        "children": [
+          {
+            "name": "Edition 1ère relance de cotisation",
+            "code_arthus": "QG04T",
+            "route": "cotisations/qg04t"
+          },
+          {
+            "name": "Edition 2ème relance de cotisation",
+            "code_arthus": "QG70T",
+            "route": "cotisations/qg70t"
+          },
+          {
+            "name": "Edition mise en demeure de cotisation",
+            "code_arthus": "QG71T",
+            "route": "cotisations/qg71t"
+          },
+          {
+            "name": "Emission massive suite à MED",
+            "code_arthus": "QG72T",
+            "route": "cotisations/qg72t"
+          },
+          {
+            "name": "Suspension / Résiliation massive suite à MED",
+            "code_arthus": "QG73T",
+            "route": "cotisations/qg73t"
+          }
+        ]
+      },
+      {
+        "name": "Editions \"Cotisations\"",
+        "code_arthus": "PR36",
+        "children": [
+          {
+            "name": "Appels de cotisation",
+            "code_arthus": "QG03T",
+            "route": "cotisations/qg03t"
+          },
+          {
+            "name": "Appel de cotisation matérialisé",
+            "code_arthus": "QG75T",
+            "route": "cotisations/qg75t"
+          },
+          {
+            "name": "Bordereaux récapitulatifs \"Contrat\"",
+            "code_arthus": "BREC",
+            "children": [
+              {
+                "name": "Cotisations calculées non émises",
+                "code_arthus": "QG30T",
+                "route": "cotisations/qg30t"
+              },
+              {
+                "name": "Cotisations émises par type d'appel",
+                "code_arthus": "QG31T",
+                "route": "cotisations/qg31t"
+              },
+              {
+                "name": "Cotisations émises par type de règlement",
+                "code_arthus": "QG38T",
+                "route": "cotisations/qg38t"
+              },
+              {
+                "name": "Cotisations émises non réglées",
+                "code_arthus": "QG36T",
+                "route": "cotisations/qg36t"
+              },
+              {
+                "name": "Frais sur cotisations émises",
+                "code_arthus": "QG34T",
+                "route": "cotisations/qg34t"
+              },
+              {
+                "name": "Commissions sur cotisations émises",
+                "code_arthus": "QG35T",
+                "route": "cotisations/qg35t"
+              },
+              {
+                "name": "Taxes sur cotisations émises",
+                "code_arthus": "QG33T",
+                "route": "cotisations/qg33t"
+              },
+              {
+                "name": "Cotisations par exercice",
+                "code_arthus": "QG32T",
+                "route": "cotisations/qg32t"
+              },
+              {
+                "name": "Cotisations par exercice (nvlle version)",
+                "code_arthus": "QG29T",
+                "route": "cotisations/qg29t"
+              }
+            ]
+          },
+          {
+            "name": "Bordereaux récapitulatifs \"Adhésion\"",
+            "code_arthus": "BREA",
+            "children": [
+              {
+                "name": "Cotisations calculées non émises",
+                "code_arthus": "QG24T",
+                "route": "cotisations/qg24t"
+              },
+              {
+                "name": "Cotisations émises par type d'appel",
+                "code_arthus": "QG21T",
+                "route": "cotisations/qg21t"
+              },
+              {
+                "name": "Cotisations émises par type de règlement",
+                "code_arthus": "QG39T",
+                "route": "cotisations/qg39t"
+              },
+              {
+                "name": "Cotisations émises non réglées",
+                "code_arthus": "QG05T",
+                "route": "cotisations/qg05t"
+              },
+              {
+                "name": "Frais sur cotisations émises",
+                "code_arthus": "QG26T",
+                "route": "cotisations/qg26t"
+              },
+              {
+                "name": "Commissions sur cotisations émises",
+                "code_arthus": "QG27T",
+                "route": "cotisations/qg27t"
+              },
+              {
+                "name": "Taxes sur cotisations émises",
+                "code_arthus": "QG22T",
+                "route": "cotisations/qg22t"
+              },
+              {
+                "name": "Cotisations par exercice",
+                "code_arthus": "QG25T",
+                "route": "cotisations/qg25t"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Prestations soins de santé",
+    "code_arthus": "PR04",
+    "children": [
+      {
+        "name": "Prestations par dossiers",
+        "code_arthus": "PR47",
+        "children": [
+          {
+            "name": "Dossiers de prestations",
+            "code_arthus": "GS12",
+            "route": "prestationssoinsdesante/gs12"
+          },
+          {
+            "name": "Liste des dossiers de prestations",
+            "code_arthus": "GS11",
+            "route": "prestationssoinsdesante/gs11"
+          },
+          {
+            "name": "Liste des lignes de prestations par utilisateur",
+            "code_arthus": "GS22",
+            "route": "prestationssoinsdesante/gs22"
+          },
+          {
+            "name": "Liste des dossiers par utilisateur",
+            "code_arthus": "GS23",
+            "route": "prestationssoinsdesante/gs23"
+          },
+          {
+            "name": "Liste des prestations par dossier",
+            "code_arthus": "GS32",
+            "route": "prestationssoinsdesante/gs32"
+          },
+          {
+            "name": "Liste des prestations",
+            "code_arthus": "GS33",
+            "route": "prestationssoinsdesante/gs33"
+          },
+          {
+            "name": "Demande de pièces dossier santé",
+            "code_arthus": "GS30T",
+            "route": "prestationssoinsdesante/gs30t"
+          }
+        ]
+      },
+      {
+        "name": "Prestations manuelles",
+        "code_arthus": "PR38",
+        "children": [
+          {
+            "name": "Prestations assuré",
+            "code_arthus": "GS01",
+            "route": "prestationssoinsdesante/gs01"
+          },
+          {
+            "name": "Consultation des prestations",
+            "code_arthus": "GS08",
+            "route": "prestationssoinsdesante/gs08"
+          },
+          {
+            "name": "Annulation des prestations",
+            "code_arthus": "GS10",
+            "route": "prestationssoinsdesante/gs10"
+          },
+          {
+            "name": "Simulation de prestations",
+            "code_arthus": "GS51",
+            "route": "prestationssoinsdesante/gs51"
+          },
+          {
+            "name": "Modification de simulation de prestations",
+            "code_arthus": "GS53",
+            "route": "prestationssoinsdesante/gs53"
+          },
+          {
+            "name": "Prestations suite à prise en charge",
+            "code_arthus": "GS41",
+            "route": "prestationssoinsdesante/gs41"
+          },
+          {
+            "name": "Prestations fournisseurs",
+            "code_arthus": "GS31",
+            "route": "prestationssoinsdesante/gs31"
+          },
+          {
+            "name": "Prestations Tiers-Payant",
+            "code_arthus": "GS21",
+            "route": "prestationssoinsdesante/gs21"
+          },
+          {
+            "name": "Prestations hospitalières",
+            "code_arthus": "GS31",
+            "route": "prestationssoinsdesante/gs31"
+          },
+          {
+            "name": "Edition de la liste des prestations saisies",
+            "code_arthus": "GD06T",
+            "route": "prestationssoinsdesante/gd06t"
+          }
+        ]
+      },
+      {
+        "name": "Prestations télétransmises",
+        "code_arthus": "PEX1",
+        "children": [
+          {
+            "name": "Importations",
+            "code_arthus": "PEX3",
+            "children": [
+              {
+                "name": "Gestion des importations",
+                "code_arthus": "PE03",
+                "route": "prestationssoinsdesante/pe03"
+              },
+              {
+                "name": "Editions \"Prestations importées\"",
+                "code_arthus": "PEX6",
+                "children": [
+                  {
+                    "name": "Prestations importées par code situation",
+                    "code_arthus": "CE02T",
+                    "route": "prestationssoinsdesante/ce02t"
+                  },
+                  {
+                    "name": "Bordereau de prestations Tiers-payant",
+                    "code_arthus": "GD09T",
+                    "route": "prestationssoinsdesante/gd09t"
+                  },
+                  {
+                    "name": "Bordereau de prestations tiers-payant détaillé",
+                    "code_arthus": "GD05T",
+                    "route": "prestationssoinsdesante/gd05t"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Calculs",
+            "code_arthus": "PEX4",
+            "children": [
+              {
+                "name": "Gestion des calculs",
+                "code_arthus": "PE85",
+                "route": "prestationssoinsdesante/pe85"
+              },
+              {
+                "name": "Gestion des prestations externes",
+                "code_arthus": "PE05",
+                "route": "prestationssoinsdesante/pe05"
+              }
+            ]
+          },
+          {
+            "name": "Exportations",
+            "code_arthus": "PEX2",
+            "children": [
+              {
+                "name": "Gestion des exportations",
+                "code_arthus": "PE87",
+                "route": "prestationssoinsdesante/pe87"
+              },
+              {
+                "name": "Gestion des demandes d'attestations \"Santé Pharma\"",
+                "code_arthus": "CEX1",
+                "children": [
+                  {
+                    "name": "Demandes d'attestations",
+                    "code_arthus": "NO08T",
+                    "route": "prestationssoinsdesante/no08t"
+                  },
+                  {
+                    "name": "Renouvellement des demandes d'attestations",
+                    "code_arthus": "NO09T",
+                    "route": "prestationssoinsdesante/no09t"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Historique des factures TPE",
+            "code_arthus": "PT08",
+            "route": "prestationssoinsdesante/pt08"
+          }
+        ]
+      },
+      {
+        "name": "Prises en charges",
+        "code_arthus": "PR39",
+        "children": [
+          {
+            "name": "Saisie des prises en charge",
+            "code_arthus": "PC04",
+            "route": "prestationssoinsdesante/pc04"
+          },
+          {
+            "name": "Consultation des prises en charge",
+            "code_arthus": "PC05",
+            "route": "prestationssoinsdesante/pc05"
+          },
+          {
+            "name": "Edition des prises en charges",
+            "code_arthus": "PC02T",
+            "route": "prestationssoinsdesante/pc02t"
+          },
+          {
+            "name": "Réédition des prises en charge",
+            "code_arthus": "PC03T",
+            "route": "prestationssoinsdesante/pc03t"
+          }
+        ]
+      },
+      {
+        "name": "Décomptes soins de santé",
+        "code_arthus": "PR41",
+        "children": [
+          {
+            "name": "Consultation des décomptes",
+            "code_arthus": "GD01",
+            "route": "prestationssoinsdesante/gd01"
+          },
+          {
+            "name": "Annulation des décomptes",
+            "code_arthus": "GD09",
+            "route": "prestationssoinsdesante/gd09"
+          },
+          {
+            "name": "Liste des décomptes d'un assuré",
+            "code_arthus": "GD02",
+            "route": "prestationssoinsdesante/gd02"
+          },
+          {
+            "name": "Liste des décomptes d'un contrat",
+            "code_arthus": "GD03",
+            "route": "prestationssoinsdesante/gd03"
+          },
+          {
+            "name": "Constitution des décomptes \"Saisie et importation\"",
+            "code_arthus": "GD08T",
+            "route": "prestationssoinsdesante/gd08t"
+          },
+          {
+            "name": "Constitution des décomptes \"Saisie\"",
+            "code_arthus": "GD03T",
+            "route": "prestationssoinsdesante/gd03t"
+          },
+          {
+            "name": "Constitution des décomptes \"Importation\"",
+            "code_arthus": "GD04T",
+            "route": "prestationssoinsdesante/gd04t"
+          },
+          {
+            "name": "Constitution des décomptes dossier santé extranet",
+            "code_arthus": "GD25T",
+            "route": "prestationssoinsdesante/gd25t"
+          },
+          {
+            "name": "Listes de décomptes",
+            "code_arthus": "GD11",
+            "children": [
+              {
+                "name": "Liste de décomptes à éditer",
+                "code_arthus": "GD05",
+                "route": "prestationssoinsdesante/gd05"
+              },
+              {
+                "name": "Liste de décomptes édités",
+                "code_arthus": "GD06",
+                "route": "prestationssoinsdesante/gd06"
+              }
+            ]
+          },
+          {
+            "name": "Ed. décomptes soins de santé lettre cheque",
+            "code_arthus": "GD21T",
+            "route": "prestationssoinsdesante/gd21t"
+          },
+          {
+            "name": "Ed. décomptes soins de santé virement assurés",
+            "code_arthus": "GD23T",
+            "route": "prestationssoinsdesante/gd23t"
+          },
+          {
+            "name": "Ed. décomptes soins de santé virement Tiers",
+            "code_arthus": "GD24T",
+            "route": "prestationssoinsdesante/gd24t"
+          },
+          {
+            "name": "Liste des décomptes annulés",
+            "code_arthus": "GD07",
+            "route": "prestationssoinsdesante/gd07"
+          }
+        ]
+      },
+      {
+        "name": "Prestations forcées",
+        "code_arthus": "PR46",
+        "children": [
+          {
+            "name": "Consultation des prestations forcées",
+            "code_arthus": "GS17",
+            "route": "prestationssoinsdesante/gs17"
+          },
+          {
+            "name": "Edition des prestations forcées",
+            "code_arthus": "GS17T",
+            "route": "prestationssoinsdesante/gs17t"
+          }
+        ]
+      },
+      {
+        "name": "Gestion des PEC périmées de tiers",
+        "code_arthus": "TR20T",
+        "route": "prestationssoinsdesante/tr20t"
+      }
+    ]
+  },
+  {
+    "name": "Prestations prévoyance",
+    "code_arthus": "PP00",
+    "children": [
+      {
+        "name": "Gestion sinistres prévoyance",
+        "code_arthus": "PP10",
+        "children": [
+          {
+            "name": "Liste des dossiers sinistre",
+            "code_arthus": "PV22",
+            "route": "prestationsprevoyance/pv22"
+          },
+          {
+            "name": "Liste des dossiers d'un assuré",
+            "code_arthus": "PV27",
+            "route": "prestationsprevoyance/pv27"
+          },
+          {
+            "name": "Dossier sinistre (b)",
+            "code_arthus": "PV10B",
+            "route": "prestationsprevoyance/pv10b"
+          },
+          {
+            "name": "Liste des dossiers d'un contrat",
+            "code_arthus": "PV28",
+            "route": "prestationsprevoyance/pv28"
+          },
+          {
+            "name": "Transfert des dossiers ouvert entre gestionnaire",
+            "code_arthus": "TR12T",
+            "route": "prestationsprevoyance/tr12t"
+          }
+        ]
+      },
+      {
+        "name": "Calculs des prestations",
+        "code_arthus": "PP20",
+        "children": [
+          {
+            "name": "Calcul des prestations",
+            "code_arthus": "ME01T",
+            "route": "prestationsprevoyance/me01t"
+          },
+          {
+            "name": "Calcul des prestations rente",
+            "code_arthus": "MER1T",
+            "route": "prestationsprevoyance/mer1t"
+          },
+          {
+            "name": "Edition des anomalies de calcul",
+            "code_arthus": "ME02T",
+            "route": "prestationsprevoyance/me02t"
+          }
+        ]
+      },
+      {
+        "name": "Décomptes prestations prévoyance",
+        "code_arthus": "PP50",
+        "children": [
+          {
+            "name": "Consultation des décomptes prévoyance",
+            "code_arthus": "GDP1",
+            "route": "prestationsprevoyance/gdp1"
+          },
+          {
+            "name": "Annulation des décomptes prévoyance",
+            "code_arthus": "GDP2",
+            "route": "prestationsprevoyance/gdp2"
+          },
+          {
+            "name": "Liste des décomptes d'un assuré",
+            "code_arthus": "PV23",
+            "route": "prestationsprevoyance/pv23"
+          },
+          {
+            "name": "Liste des décomptes d'un contrat",
+            "code_arthus": "PV24",
+            "route": "prestationsprevoyance/pv24"
+          },
+          {
+            "name": "Constitution des décomptes prévoyance",
+            "code_arthus": "GDP4T",
+            "route": "prestationsprevoyance/gdp4t"
+          },
+          {
+            "name": "Edition des décomptes prévoyance",
+            "code_arthus": "GDP1T",
+            "route": "prestationsprevoyance/gdp1t"
+          },
+          {
+            "name": "Re-édition des décomptes prévoyance",
+            "code_arthus": "GDP3T",
+            "route": "prestationsprevoyance/gdp3t"
+          }
+        ]
+      },
+      {
+        "name": "Editions \"Prestations prévoyance\"",
+        "code_arthus": "PP1A",
+        "children": [
+          {
+            "name": "Edition des sinistres par code situation",
+            "code_arthus": "TR01T",
+            "route": "prestationsprevoyance/tr01t"
+          },
+          {
+            "name": "Edition des sinistres par contrat",
+            "code_arthus": "TR03T",
+            "route": "prestationsprevoyance/tr03t"
+          },
+          {
+            "name": "Edition des sinistres par assuré",
+            "code_arthus": "TR04T",
+            "route": "prestationsprevoyance/tr04t"
+          },
+          {
+            "name": "Demande de pièces",
+            "code_arthus": "PP02T",
+            "route": "prestationsprevoyance/pp02t"
+          },
+          {
+            "name": "Renouvellement de pièces",
+            "code_arthus": "PP03T",
+            "route": "prestationsprevoyance/pp03t"
+          }
+        ]
+      },
+      {
+        "name": "Fermeture des sinistres",
+        "code_arthus": "ME04T",
+        "route": "prestationsprevoyance/me04t"
+      },
+      {
+        "name": "Gestion des prestations externes Prévoyance",
+        "code_arthus": "PE08",
+        "route": "prestationsprevoyance/pe08"
+      }
+    ]
+  },
+  {
+    "name": "Opérations \"Délégataires\"",
+    "code_arthus": "DE00",
+    "children": [
+      {
+        "name": "Reversements de cotisations",
+        "code_arthus": "PR32",
+        "children": [
+          {
+            "name": "Constitution des bordereaux de reversement",
+            "code_arthus": "QG08T",
+            "route": "operationsdelegataires/qg08t"
+          },
+          {
+            "name": "Validation des bordereaux de reversement",
+            "code_arthus": "QG09",
+            "route": "operationsdelegataires/qg09"
+          },
+          {
+            "name": "Liste des bordereaux de reversement",
+            "code_arthus": "QG08",
+            "route": "operationsdelegataires/qg08"
+          },
+          {
+            "name": "Editions \"Reversement de cotisations\"",
+            "code_arthus": "QGEM",
+            "children": [
+              {
+                "name": "Editions \"Cotisations\"",
+                "code_arthus": "QGE1",
+                "children": [
+                  {
+                    "name": "Reversement de cotisations",
+                    "code_arthus": "QG09T",
+                    "route": "operationsdelegataires/qg09t"
+                  },
+                  {
+                    "name": "Reverst de cotis. récap. par classe de garantie",
+                    "code_arthus": "QG51T",
+                    "route": "operationsdelegataires/qg51t"
+                  },
+                  {
+                    "name": "Reverst de cotis. détail par garantie",
+                    "code_arthus": "QG50T",
+                    "route": "operationsdelegataires/qg50t"
+                  },
+                  {
+                    "name": "Reverst de cotis. détail par adhérent",
+                    "code_arthus": "QG49T",
+                    "route": "operationsdelegataires/qg49t"
+                  }
+                ]
+              },
+              {
+                "name": "Editions \"Commissions\"",
+                "code_arthus": "COM1",
+                "children": [
+                  {
+                    "name": "Reversement de cotisations \"Commissions\"",
+                    "code_arthus": "QG54T",
+                    "route": "operationsdelegataires/qg54t"
+                  },
+                  {
+                    "name": "R. de cotis. \"Comm.\" récap. par classe de garantie",
+                    "code_arthus": "QG56T",
+                    "route": "operationsdelegataires/qg56t"
+                  },
+                  {
+                    "name": "R. de cotis. \"Comm.\" détail par garantie",
+                    "code_arthus": "QG58T",
+                    "route": "operationsdelegataires/qg58t"
+                  },
+                  {
+                    "name": "R. de cotis. \"Comm.\" détail par adhérent",
+                    "code_arthus": "QG60T",
+                    "route": "operationsdelegataires/qg60t"
+                  }
+                ]
+              },
+              {
+                "name": "Editions \"Taxes\"",
+                "code_arthus": "TAX1",
+                "children": [
+                  {
+                    "name": "Reversement de cotisations \"Taxes\"",
+                    "code_arthus": "QG55T",
+                    "route": "operationsdelegataires/qg55t"
+                  },
+                  {
+                    "name": "R. de cotis. \"Taxes\" récap. par classe de garantie",
+                    "code_arthus": "QG57T",
+                    "route": "operationsdelegataires/qg57t"
+                  },
+                  {
+                    "name": "R. de cotis. \"Taxes\" détail par garantie",
+                    "code_arthus": "QG59T",
+                    "route": "operationsdelegataires/qg59t"
+                  },
+                  {
+                    "name": "R. de cotis. \"Taxes\" détail par adhérent",
+                    "code_arthus": "QG61T",
+                    "route": "operationsdelegataires/qg61t"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Demandes de remboursement soins de santé",
+        "code_arthus": "PR44",
+        "children": [
+          {
+            "name": "Constitution des demandes de remboursement",
+            "code_arthus": "GDP8T",
+            "route": "operationsdelegataires/gdp8t"
+          },
+          {
+            "name": "Validation des demandes de remboursement",
+            "code_arthus": "GDR3",
+            "route": "operationsdelegataires/gdr3"
+          },
+          {
+            "name": "Liste des demandes de remboursement",
+            "code_arthus": "GDR5",
+            "route": "operationsdelegataires/gdr5"
+          },
+          {
+            "name": "Editions \"Demandes de remboursement\"",
+            "code_arthus": "RPM1",
+            "children": [
+              {
+                "name": "Demande de remboursement de prestation",
+                "code_arthus": "GDD6T",
+                "route": "operationsdelegataires/gdd6t"
+              },
+              {
+                "name": "Dde remb. de prest. récap. par classe de garantie",
+                "code_arthus": "GDD5T",
+                "route": "operationsdelegataires/gdd5t"
+              },
+              {
+                "name": "Dde remb. de prest. détail par garantie",
+                "code_arthus": "GDD7T",
+                "route": "operationsdelegataires/gdd7t"
+              },
+              {
+                "name": "Dde remb. de prest. détail par assuré",
+                "code_arthus": "GDD3T",
+                "route": "operationsdelegataires/gdd3t"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Demandes de remboursement prévoyance",
+        "code_arthus": "PP40",
+        "children": [
+          {
+            "name": "Constitution des demandes de remboursement",
+            "code_arthus": "GDP7T",
+            "route": "operationsdelegataires/gdp7t"
+          },
+          {
+            "name": "Validation des demandes de remboursement",
+            "code_arthus": "GDR2",
+            "route": "operationsdelegataires/gdr2"
+          },
+          {
+            "name": "Liste des demandes de remboursement",
+            "code_arthus": "GDR4",
+            "route": "operationsdelegataires/gdr4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Opérations \"Délégants\"",
+    "code_arthus": "DE10",
+    "children": [
+      {
+        "name": "Reversement des commissions",
+        "code_arthus": "DE4A",
+        "children": [
+          {
+            "name": "Constit° des bordereaux de reversement",
+            "code_arthus": "DE40T",
+            "route": "operationsdelegants/de40t"
+          },
+          {
+            "name": "Validation des bordereaux de reversement",
+            "code_arthus": "DE41",
+            "route": "operationsdelegants/de41"
+          },
+          {
+            "name": "Liste des bordereaux de reversement",
+            "code_arthus": "DE40",
+            "route": "operationsdelegants/de40"
+          },
+          {
+            "name": "Editions \"Commissions\"",
+            "code_arthus": "DE6A",
+            "children": [
+              {
+                "name": "Bord. reversement de commissions \"Contrat\"",
+                "code_arthus": "DE41T",
+                "route": "operationsdelegants/de41t"
+              },
+              {
+                "name": "Bord. reversement de commissions \"Adhésion\"",
+                "code_arthus": "DE43T",
+                "route": "operationsdelegants/de43t"
+              },
+              {
+                "name": "Com. reversées sur une période par intermédiaire",
+                "code_arthus": "DE42T",
+                "route": "operationsdelegants/de42t"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Opérations \"Régimes Obligatoires\"",
+    "code_arthus": "DE3A",
+    "route": "operationsregimesobligatoires/de3a"
+  },
+  {
+    "name": "Trésorerie",
+    "code_arthus": "TR00",
+    "children": [
+      {
+        "name": "Trésorerie client",
+        "code_arthus": "EN3M",
+        "children": [
+          {
+            "name": "Encaissements client",
+            "code_arthus": "EN10",
+            "route": "tresorerie/en10"
+          },
+          {
+            "name": "Encaissements client O.D.",
+            "code_arthus": "EN24",
+            "route": "tresorerie/en24"
+          },
+          {
+            "name": "Gestion du compte client",
+            "code_arthus": "EN18",
+            "route": "tresorerie/en18"
+          },
+          {
+            "name": "Gestion du compte client - Affectation",
+            "code_arthus": "EN11",
+            "route": "tresorerie/en11"
+          },
+          {
+            "name": "Gestion du compte client - Remboursement",
+            "code_arthus": "EN14",
+            "route": "tresorerie/en14"
+          },
+          {
+            "name": "Gestion du compte client - Comptabilité",
+            "code_arthus": "EN15",
+            "route": "tresorerie/en15"
+          },
+          {
+            "name": "Détail des mouvements du compte d'attente",
+            "code_arthus": "EN16",
+            "route": "tresorerie/en16"
+          }
+        ]
+      },
+      {
+        "name": "Factures en attente",
+        "code_arthus": "EN23",
+        "route": "tresorerie/en23"
+      },
+      {
+        "name": "Encaissements",
+        "code_arthus": "CO20",
+        "children": [
+          {
+            "name": "Consultation des encaissements",
+            "code_arthus": "EN12",
+            "route": "tresorerie/en12"
+          },
+          {
+            "name": "Remises en banque",
+            "code_arthus": "EN2M",
+            "children": [
+              {
+                "name": "Validation des remises en banque",
+                "code_arthus": "EN20",
+                "route": "tresorerie/en20"
+              },
+              {
+                "name": "Liste des remises en banque",
+                "code_arthus": "EN22",
+                "route": "tresorerie/en22"
+              },
+              {
+                "name": "Edition bordereau de remise en banque",
+                "code_arthus": "EN01T",
+                "route": "tresorerie/en01t"
+              }
+            ]
+          },
+          {
+            "name": "Editions \"Encaissement\"",
+            "code_arthus": "EN1M",
+            "children": [
+              {
+                "name": "Récapitulatif des encaissements",
+                "code_arthus": "EN03T",
+                "route": "tresorerie/en03t"
+              },
+              {
+                "name": "Encaissements non affectés",
+                "code_arthus": "EN02T",
+                "route": "tresorerie/en02t"
+              },
+              {
+                "name": "Factures non soldées",
+                "code_arthus": "EN04T",
+                "route": "tresorerie/en04t"
+              }
+            ]
+          },
+          {
+            "name": "Liste des encaissements annulés",
+            "code_arthus": "EN29",
+            "route": "tresorerie/en29"
+          },
+          {
+            "name": "Liste des virements externes",
+            "code_arthus": "VR10",
+            "route": "tresorerie/vr10"
+          }
+        ]
+      },
+      {
+        "name": "Décaissements",
+        "code_arthus": "CO10",
+        "children": [
+          {
+            "name": "Saisie des décaissements",
+            "code_arthus": "RG16",
+            "route": "tresorerie/rg16"
+          },
+          {
+            "name": "Liste des décaissements",
+            "code_arthus": "RG19",
+            "route": "tresorerie/rg19"
+          },
+          {
+            "name": "Consultation des décaissements",
+            "code_arthus": "RG11",
+            "route": "tresorerie/rg11"
+          },
+          {
+            "name": "Validation des décaissements",
+            "code_arthus": "RG14",
+            "route": "tresorerie/rg14"
+          },
+          {
+            "name": "Modification des décaissements en instance",
+            "code_arthus": "RG10",
+            "route": "tresorerie/rg10"
+          },
+          {
+            "name": "Affectation des lettres-chèques",
+            "code_arthus": "RG21",
+            "route": "tresorerie/rg21"
+          },
+          {
+            "name": "Annulation d'affectation des lettres-chèques",
+            "code_arthus": "RG22",
+            "route": "tresorerie/rg22"
+          },
+          {
+            "name": "Editions \"Décaissements\"",
+            "code_arthus": "RG02",
+            "children": [
+              {
+                "name": "Décaissements à valider",
+                "code_arthus": "RG07T",
+                "route": "tresorerie/rg07t"
+              },
+              {
+                "name": "Décaissement émis",
+                "code_arthus": "RG01T",
+                "route": "tresorerie/rg01t"
+              },
+              {
+                "name": "Décaissements annulés",
+                "code_arthus": "RG05T",
+                "route": "tresorerie/rg05t"
+              },
+              {
+                "name": "Supports de paiement invalidés",
+                "code_arthus": "RG06T",
+                "route": "tresorerie/rg06t"
+              },
+              {
+                "name": "Edition des décaissements manuels",
+                "code_arthus": "CR04T",
+                "route": "tresorerie/cr04t"
+              }
+            ]
+          },
+          {
+            "name": "Liste des décaissements annulés",
+            "code_arthus": "RG30",
+            "route": "tresorerie/rg30"
+          }
+        ]
+      },
+      {
+        "name": "Prélèvements",
+        "code_arthus": "PR43",
+        "children": [
+          {
+            "name": "Constitution des bordereaux de prélèvements",
+            "code_arthus": "PV03T",
+            "route": "tresorerie/pv03t"
+          },
+          {
+            "name": "Validation des bordereaux de prélèvement",
+            "code_arthus": "PRE6",
+            "route": "tresorerie/pre6"
+          },
+          {
+            "name": "Liste des bordereaux de prélèvements",
+            "code_arthus": "PRE9",
+            "route": "tresorerie/pre9"
+          },
+          {
+            "name": "Editions \"Prélèvements\"",
+            "code_arthus": "PREM",
+            "children": [
+              {
+                "name": "Bordereau de prélèvement",
+                "code_arthus": "PV06T",
+                "route": "tresorerie/pv06t"
+              },
+              {
+                "name": "Bordereau de prélèvements (détail)",
+                "code_arthus": "PV04T",
+                "route": "tresorerie/pv04t"
+              },
+              {
+                "name": "Regénération des fichiers de prélèvements",
+                "code_arthus": "PV05T",
+                "route": "tresorerie/pv05t"
+              },
+              {
+                "name": "Bordereau des rejets de prélèvement",
+                "code_arthus": "PV07T",
+                "route": "tresorerie/pv07t"
+              }
+            ]
+          },
+          {
+            "name": "Import des rejets de prélèvement",
+            "code_arthus": "PV08T",
+            "route": "tresorerie/pv08t"
+          }
+        ]
+      },
+      {
+        "name": "Virements",
+        "code_arthus": "PR42",
+        "children": [
+          {
+            "name": "Constitution bordereaux de virements",
+            "code_arthus": "VR03T",
+            "route": "tresorerie/vr03t"
+          },
+          {
+            "name": "Validation des bordereaux de virements",
+            "code_arthus": "VR06",
+            "route": "tresorerie/vr06"
+          },
+          {
+            "name": "Liste des bordereaux de virements",
+            "code_arthus": "VR09",
+            "route": "tresorerie/vr09"
+          },
+          {
+            "name": "Editions \"Virements\"",
+            "code_arthus": "VR1E",
+            "children": [
+              {
+                "name": "Edition bordereaux de virements",
+                "code_arthus": "VR04T",
+                "route": "tresorerie/vr04t"
+              },
+              {
+                "name": "Génération d'un fichier de virements",
+                "code_arthus": "VR01T",
+                "route": "tresorerie/vr01t"
+              },
+              {
+                "name": "Regénération d'un fichier de virements",
+                "code_arthus": "VR05T",
+                "route": "tresorerie/vr05t"
+              }
+            ]
+          },
+          {
+            "name": "Virement API 1P6",
+            "code_arthus": "VR20T",
+            "route": "tresorerie/vr20t"
+          }
+        ]
+      },
+      {
+        "name": "Rapprochement bancaire",
+        "code_arthus": "CO50",
+        "children": [
+          {
+            "name": "Rapprochement automatique des décaissements",
+            "code_arthus": "RB01T",
+            "route": "tresorerie/rb01t"
+          },
+          {
+            "name": "Rapprochement manuel des décaissements",
+            "code_arthus": "RB01",
+            "route": "tresorerie/rb01"
+          },
+          {
+            "name": "Suivi des rapprochements",
+            "code_arthus": "RB02",
+            "route": "tresorerie/rb02"
+          },
+          {
+            "name": "Edition liste des anomalies",
+            "code_arthus": "RB04T",
+            "route": "tresorerie/rb04t"
+          },
+          {
+            "name": "Edition liste des écarts de montants",
+            "code_arthus": "RB02T",
+            "route": "tresorerie/rb02t"
+          },
+          {
+            "name": "Edition liste des chèques non débités",
+            "code_arthus": "RB03T",
+            "route": "tresorerie/rb03t"
+          }
+        ]
+      },
+      {
+        "name": "Ordres de paiements",
+        "code_arthus": "EN00",
+        "route": "tresorerie/en00"
+      },
+      {
+        "name": "Ecarts de change",
+        "code_arthus": "EC00",
+        "route": "tresorerie/ec00"
+      }
+    ]
+  },
+  {
+    "name": "Fiscalité",
+    "code_arthus": "FI00",
+    "children": [
+      {
+        "name": "Courriers déclarations \"Cotisations\"",
+        "code_arthus": "DE02T",
+        "route": "fiscalite/de02t"
+      }
+    ]
+  },
+  {
+    "name": "Comptabilisation",
+    "code_arthus": "CO00",
+    "children": [
+      {
+        "name": "Constitution des bordereaux de comptabilisation",
+        "code_arthus": "CM01T",
+        "route": "comptabilisation/cm01t"
+      },
+      {
+        "name": "Validation des bordereaux de comptabilisation",
+        "code_arthus": "CM03",
+        "route": "comptabilisation/cm03"
+      },
+      {
+        "name": "Liste des bordereaux de comptabilisation",
+        "code_arthus": "CM05",
+        "route": "comptabilisation/cm05"
+      },
+      {
+        "name": "Editions \"Ecritures comptables\"",
+        "code_arthus": "CM1M",
+        "children": [
+          {
+            "name": "Edition des bordereaux de compta. détaillées",
+            "code_arthus": "CM02T",
+            "route": "comptabilisation/cm02t"
+          },
+          {
+            "name": "Edition des écritures compta. centralisées",
+            "code_arthus": "CM03T",
+            "route": "comptabilisation/cm03t"
+          },
+          {
+            "name": "Génération des fichiers d'écriture",
+            "code_arthus": "CM04T",
+            "route": "comptabilisation/cm04t"
+          },
+          {
+            "name": "Re-génération des fichiers d'écriture",
+            "code_arthus": "CM05T",
+            "route": "comptabilisation/cm05t"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Statistiques et pilotage",
+    "code_arthus": "SB00",
+    "children": [
+      {
+        "name": "Prestations soins de santé",
+        "code_arthus": "SB10",
+        "children": [
+          {
+            "name": "Actes soins de santé saisis",
+            "code_arthus": "SB11",
+            "children": [
+              {
+                "name": "Prestations saisies \"tous utilisateurs\"",
+                "code_arthus": "ST01",
+                "route": "statistiquesetpilotage/st01"
+              },
+              {
+                "name": "Prestations saisies \"par utilisateur\"",
+                "code_arthus": "ST02",
+                "route": "statistiquesetpilotage/st02"
+              }
+            ]
+          },
+          {
+            "name": "Consommation soins de santé",
+            "code_arthus": "SB12",
+            "children": [
+              {
+                "name": "Conso. soins de santé par produit",
+                "code_arthus": "ST19T",
+                "route": "statistiquesetpilotage/st19t"
+              },
+              {
+                "name": "Conso. soins de santé par contrat",
+                "code_arthus": "SB1A",
+                "children": [
+                  {
+                    "name": "Conso. soins de santé / contrat d'un produit",
+                    "code_arthus": "ST10T",
+                    "route": "statistiquesetpilotage/st10t"
+                  },
+                  {
+                    "name": "Conso. soins de santé / contrat d'un organisme",
+                    "code_arthus": "ST17T",
+                    "route": "statistiquesetpilotage/st17t"
+                  },
+                  {
+                    "name": "Conso. soins de santé / contrat d'un souscripteur",
+                    "code_arthus": "ST18T",
+                    "route": "statistiquesetpilotage/st18t"
+                  }
+                ]
+              },
+              {
+                "name": "Conso. soins de santé par adhésion",
+                "code_arthus": "SB1B",
+                "children": [
+                  {
+                    "name": "Conso. soins de santé / adhésion d'un contrat",
+                    "code_arthus": "ST20T",
+                    "route": "statistiquesetpilotage/st20t"
+                  },
+                  {
+                    "name": "Conso. soins de santé / adhésion d'un adhérent",
+                    "code_arthus": "ST27T",
+                    "route": "statistiquesetpilotage/st27t"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Règlements soins de santé",
+            "code_arthus": "SB13",
+            "children": [
+              {
+                "name": "Prestations réglées",
+                "code_arthus": "ST03T",
+                "route": "statistiquesetpilotage/st03t"
+              },
+              {
+                "name": "Prestations réglées récap. par classe de garantie",
+                "code_arthus": "ST26T",
+                "route": "statistiquesetpilotage/st26t"
+              },
+              {
+                "name": "Prestations réglées détail par garantie",
+                "code_arthus": "ST05T",
+                "route": "statistiquesetpilotage/st05t"
+              },
+              {
+                "name": "Prestations réglées détail par assuré",
+                "code_arthus": "ST02T",
+                "route": "statistiquesetpilotage/st02t"
+              }
+            ]
+          },
+          {
+            "name": "Analyse des actes soins de santé",
+            "code_arthus": "SB14",
+            "children": [
+              {
+                "name": "Analyse des actes / contrat d'un produit",
+                "code_arthus": "ST12T",
+                "route": "statistiquesetpilotage/st12t"
+              },
+              {
+                "name": "Analyse des actes / contrat d'un assureur",
+                "code_arthus": "ST28T",
+                "route": "statistiquesetpilotage/st28t"
+              },
+              {
+                "name": "Analyse des actes / contrat d'un souscripteur",
+                "code_arthus": "ST29T",
+                "route": "statistiquesetpilotage/st29t"
+              }
+            ]
+          },
+          {
+            "name": "Analyse sinistralité soins de santé",
+            "code_arthus": "SB15",
+            "children": [
+              {
+                "name": "Analyse sinistralité / contrat",
+                "code_arthus": "SB16",
+                "children": [
+                  {
+                    "name": "Analyse sinistralité / contrat d'un produit",
+                    "code_arthus": "ST11T",
+                    "route": "statistiquesetpilotage/st11t"
+                  },
+                  {
+                    "name": "Analyse sinistralité / contrat d'un assureur",
+                    "code_arthus": "ST30T",
+                    "route": "statistiquesetpilotage/st30t"
+                  },
+                  {
+                    "name": "Analyse sinistralité / contrat d'un souscripteur",
+                    "code_arthus": "ST31T",
+                    "route": "statistiquesetpilotage/st31t"
+                  }
+                ]
+              },
+              {
+                "name": "Analyse sinistralité / adhésion",
+                "code_arthus": "ST32T",
+                "route": "statistiquesetpilotage/st32t"
+              }
+            ]
+          },
+          {
+            "name": "Prestations externes",
+            "code_arthus": "SB18",
+            "children": [
+              {
+                "name": "Nombre d'actes importés / contrat",
+                "code_arthus": "SP00",
+                "children": [
+                  {
+                    "name": "Nombre d'actes importés / contrat d'une société",
+                    "code_arthus": "ST33T",
+                    "route": "statistiquesetpilotage/st33t"
+                  },
+                  {
+                    "name": "Nombre d'actes importés / contrat d'un assureur",
+                    "code_arthus": "ST34T",
+                    "route": "statistiquesetpilotage/st34t"
+                  }
+                ]
+              },
+              {
+                "name": "Nombre d'actes importés",
+                "code_arthus": "SP05",
+                "children": [
+                  {
+                    "name": "Nombre d'actes importés / société",
+                    "code_arthus": "ST41T",
+                    "route": "statistiquesetpilotage/st41t"
+                  },
+                  {
+                    "name": "Nombre d'actes importés / assureur",
+                    "code_arthus": "ST42T",
+                    "route": "statistiquesetpilotage/st42t"
+                  }
+                ]
+              },
+              {
+                "name": "Nombre d'assurés exportés / contrat",
+                "code_arthus": "SP03",
+                "children": [
+                  {
+                    "name": "Nombre d'assurés exportés / contrat d'une société",
+                    "code_arthus": "ST39T",
+                    "route": "statistiquesetpilotage/st39t"
+                  },
+                  {
+                    "name": "Nombre d'assurés exportés / contrat d'un assureur",
+                    "code_arthus": "ST40T",
+                    "route": "statistiquesetpilotage/st40t"
+                  }
+                ]
+              },
+              {
+                "name": "Nombre d'assurés exportés",
+                "code_arthus": "SP04",
+                "children": [
+                  {
+                    "name": "Nombre d'assurés exportés / société",
+                    "code_arthus": "ST43T",
+                    "route": "statistiquesetpilotage/st43t"
+                  },
+                  {
+                    "name": "Nombre d'assurés exportés / assureur",
+                    "code_arthus": "ST44T",
+                    "route": "statistiquesetpilotage/st44t"
+                  }
+                ]
+              },
+              {
+                "name": "Répartition des assurés / contrat",
+                "code_arthus": "SP01",
+                "children": [
+                  {
+                    "name": "Répartition des assurés / contrat d'une société",
+                    "code_arthus": "ST35T",
+                    "route": "statistiquesetpilotage/st35t"
+                  },
+                  {
+                    "name": "Répartition des assurés / contrat d'un assureur",
+                    "code_arthus": "ST36T",
+                    "route": "statistiquesetpilotage/st36t"
+                  }
+                ]
+              },
+              {
+                "name": "Répartition des assurés",
+                "code_arthus": "SP06",
+                "children": [
+                  {
+                    "name": "Répartition des assurés / société",
+                    "code_arthus": "ST45T",
+                    "route": "statistiquesetpilotage/st45t"
+                  },
+                  {
+                    "name": "Répartition des assurés / assureur",
+                    "code_arthus": "ST46T",
+                    "route": "statistiquesetpilotage/st46t"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rapport prestations/cotisations",
+        "code_arthus": "SB30",
+        "children": [
+          {
+            "name": "Rapport P/C par produit",
+            "code_arthus": "ST07T",
+            "route": "statistiquesetpilotage/st07t"
+          },
+          {
+            "name": "Rapport P/C par contrat",
+            "code_arthus": "SB31",
+            "children": [
+              {
+                "name": "Rapport P/C par contrat d'un produit",
+                "code_arthus": "ST09T",
+                "route": "statistiquesetpilotage/st09t"
+              },
+              {
+                "name": "Rapport P/C par contrat d'un assureur",
+                "code_arthus": "ST08T",
+                "route": "statistiquesetpilotage/st08t"
+              },
+              {
+                "name": "Rapport P/C par contrat d'un souscripteur",
+                "code_arthus": "ST15T",
+                "route": "statistiquesetpilotage/st15t"
+              }
+            ]
+          },
+          {
+            "name": "Rapport P/C par adhésion",
+            "code_arthus": "SB32",
+            "children": [
+              {
+                "name": "Rapport P/C par adhésion d'un contrat",
+                "code_arthus": "ST06T",
+                "route": "statistiquesetpilotage/st06t"
+              },
+              {
+                "name": "Rapport P/C par adhésion d'un adhérent",
+                "code_arthus": "ST16T",
+                "route": "statistiquesetpilotage/st16t"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Production",
+        "code_arthus": "IN00",
+        "route": "statistiquesetpilotage/in00"
+      },
+      {
+        "name": "Comptabilité",
+        "code_arthus": "SB50",
+        "children": [
+          {
+            "name": "Extraction du compte d'attente",
+            "code_arthus": "CM06T",
+            "route": "statistiquesetpilotage/cm06t"
+          },
+          {
+            "name": "Extraction des encaissements",
+            "code_arthus": "CM07T",
+            "route": "statistiquesetpilotage/cm07t"
+          },
+          {
+            "name": "Extraction des décaissements",
+            "code_arthus": "CM08T",
+            "route": "statistiquesetpilotage/cm08t"
+          },
+          {
+            "name": "Extraction des commissions",
+            "code_arthus": "CM11T",
+            "route": "statistiquesetpilotage/cm11t"
+          },
+          {
+            "name": "Extraction des émisions de cotisations",
+            "code_arthus": "CM12T",
+            "route": "statistiquesetpilotage/cm12t"
+          },
+          {
+            "name": "Edition synthétique des encaissements",
+            "code_arthus": "CM09T",
+            "route": "statistiquesetpilotage/cm09t"
+          },
+          {
+            "name": "Edition synthétique des décaissements",
+            "code_arthus": "CM10T",
+            "route": "statistiquesetpilotage/cm10t"
+          }
+        ]
+      },
+      {
+        "name": "Extractions spécifiques",
+        "code_arthus": "EX01",
+        "children": [
+          {
+            "name": "PRDG",
+            "code_arthus": "EX27",
+            "children": [
+              {
+                "name": "Configuration des flux",
+                "code_arthus": "EX28",
+                "route": "statistiquesetpilotage/ex28"
+              },
+              {
+                "name": "Liste des flux",
+                "code_arthus": "EX29",
+                "route": "statistiquesetpilotage/ex29"
+              },
+              {
+                "name": "Consultation des flux envoyés",
+                "code_arthus": "EX30",
+                "route": "statistiquesetpilotage/ex30"
+              },
+              {
+                "name": "Génération des flux PRDG",
+                "code_arthus": "EX31T",
+                "route": "statistiquesetpilotage/ex31t"
+              }
+            ]
+          },
+          {
+            "name": "Extraction \"assurés par produit\"",
+            "code_arthus": "EX01T",
+            "route": "statistiquesetpilotage/ex01t"
+          },
+          {
+            "name": "Extraction \"assurés par contrat\"",
+            "code_arthus": "EX05T",
+            "route": "statistiquesetpilotage/ex05t"
+          },
+          {
+            "name": "Extraction \"ouvreurs de droits / contrat\"",
+            "code_arthus": "EX23T",
+            "route": "statistiquesetpilotage/ex23t"
+          },
+          {
+            "name": "Extraction \"simulation prestations\"",
+            "code_arthus": "SI00",
+            "children": [
+              {
+                "name": "Saisie de la demande",
+                "code_arthus": "SI01",
+                "route": "statistiquesetpilotage/si01"
+              },
+              {
+                "name": "Extraction",
+                "code_arthus": "SI02",
+                "route": "statistiquesetpilotage/si02"
+              }
+            ]
+          },
+          {
+            "name": "Extraction \"Santeclair\"",
+            "code_arthus": "EX25T",
+            "route": "statistiquesetpilotage/ex25t"
+          },
+          {
+            "name": "Extraction \"Assurés en ligne\"",
+            "code_arthus": "EX26T",
+            "route": "statistiquesetpilotage/ex26t"
+          }
+        ]
+      },
+      {
+        "name": "Gestion de la corbeille des demandes",
+        "code_arthus": "ST05",
+        "route": "statistiquesetpilotage/st05"
+      },
+      {
+        "name": "Suivi / validation des courriers",
+        "code_arthus": "CR06",
+        "route": "statistiquesetpilotage/cr06"
+      }
+    ]
+  },
+  {
+    "name": "Traitements différés",
+    "code_arthus": "BA00",
+    "children": [
+      {
+        "name": "Traitements et éditions administrateur",
+        "code_arthus": "BA50",
+        "children": [
+          {
+            "name": "Génération des traitements périodiques",
+            "code_arthus": "BA17",
+            "route": "traitementsdifferes/ba17"
+          },
+          {
+            "name": "Lancement des traitements différés",
+            "code_arthus": "BA20",
+            "route": "traitementsdifferes/ba20"
+          },
+          {
+            "name": "Gestion des éditions administrateur",
+            "code_arthus": "BA18",
+            "route": "traitementsdifferes/ba18"
+          },
+          {
+            "name": "Gestion des rééditions administrateur",
+            "code_arthus": "BA19",
+            "route": "traitementsdifferes/ba19"
+          },
+          {
+            "name": "Purge des éditions",
+            "code_arthus": "PU03T",
+            "route": "traitementsdifferes/pu03t"
+          },
+          {
+            "name": "Sauvegarde",
+            "code_arthus": "SA02T",
+            "route": "traitementsdifferes/sa02t"
+          },
+          {
+            "name": "Purge des importations portes externes",
+            "code_arthus": "NO22T",
+            "route": "traitementsdifferes/no22t"
+          },
+          {
+            "name": "Edition journal administrateur",
+            "code_arthus": "BA21T",
+            "route": "traitementsdifferes/ba21t"
+          }
+        ]
+      },
+      {
+        "name": "Editions utilisateur",
+        "code_arthus": "BA40",
+        "children": [
+          {
+            "name": "Gestion des éditions utilisateur",
+            "code_arthus": "BA14",
+            "route": "traitementsdifferes/ba14"
+          },
+          {
+            "name": "Gestion des rééditions utilisateur",
+            "code_arthus": "BA15",
+            "route": "traitementsdifferes/ba15"
+          },
+          {
+            "name": "Traitements en attente",
+            "code_arthus": "BA16",
+            "route": "traitementsdifferes/ba16"
+          }
+        ]
+      },
+      {
+        "name": "Màj des anomalies d'importation etat 2 code PFH.",
+        "code_arthus": "BA611T",
+        "route": "traitementsdifferes/ba611t"
+      },
+      {
+        "name": "Màj des anomalies d'importation etat 4, code FRT",
+        "code_arthus": "BA612T",
+        "route": "traitementsdifferes/ba612t"
+      },
+      {
+        "name": "Màj des anomalies d'importation etat 4, code FRH",
+        "code_arthus": "BA613T",
+        "route": "traitementsdifferes/ba613t"
+      },
+      {
+        "name": "Modification d'un sinistre externe",
+        "code_arthus": "BA62T",
+        "route": "traitementsdifferes/ba62t"
+      },
+      {
+        "name": "Màj date de fin d'adhésion en anomalie",
+        "code_arthus": "BA64T",
+        "route": "traitementsdifferes/ba64t"
+      }
+    ]
+  },
+  {
+    "name": "Interfaces",
+    "code_arthus": "IT00",
+    "children": [
+      {
+        "name": "Importations",
+        "code_arthus": "IT2A",
+        "children": [
+          {
+            "name": "Importations des affiliations",
+            "code_arthus": "IT30",
+            "children": [
+              {
+                "name": "Importation des affiliations DSN",
+                "code_arthus": "IT31",
+                "children": [
+                  {
+                    "name": "Importation des affiliations DSN",
+                    "code_arthus": "AF05T",
+                    "route": "interfaces/af05t"
+                  },
+                  {
+                    "name": "Liste des remises d'importation des affiliations",
+                    "code_arthus": "AF03",
+                    "route": "interfaces/af03"
+                  },
+                  {
+                    "name": "Liste / recherche des affiliations",
+                    "code_arthus": "AF08",
+                    "route": "interfaces/af08"
+                  },
+                  {
+                    "name": "Annulation d'un import d'affiliations",
+                    "code_arthus": "AF03T",
+                    "route": "interfaces/af03t"
+                  },
+                  {
+                    "name": "Identification et simulation des cotisations DSN",
+                    "code_arthus": "AF06T",
+                    "route": "interfaces/af06t"
+                  },
+                  {
+                    "name": "Intégration des cotisations DSN",
+                    "code_arthus": "AF22T",
+                    "route": "interfaces/af22t"
+                  },
+                  {
+                    "name": "Annulation des pré-déclarations AT DSN",
+                    "code_arthus": "AF23T",
+                    "route": "interfaces/af23t"
+                  }
+                ]
+              },
+              {
+                "name": "Importation des affiliations massive",
+                "code_arthus": "IT32",
+                "children": [
+                  {
+                    "name": "Importation des affiliations massives",
+                    "code_arthus": "AF02T",
+                    "route": "interfaces/af02t"
+                  },
+                  {
+                    "name": "Liste des remises d'importation des affiliations",
+                    "code_arthus": "AF03",
+                    "route": "interfaces/af03"
+                  },
+                  {
+                    "name": "Liste / recherche des affiliations",
+                    "code_arthus": "AF08",
+                    "route": "interfaces/af08"
+                  },
+                  {
+                    "name": "Annulation d'un import des affiliations",
+                    "code_arthus": "AF03T",
+                    "route": "interfaces/af03t"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Importation d'éléments de couverture",
+            "code_arthus": "ITM3",
+            "children": [
+              {
+                "name": "Importation éléments de couverture",
+                "code_arthus": "IT03T",
+                "route": "interfaces/it03t"
+              },
+              {
+                "name": "Eléments de couverture importés",
+                "code_arthus": "IT08",
+                "route": "interfaces/it08"
+              },
+              {
+                "name": "Attribution des clés de correspondance",
+                "code_arthus": "IT06",
+                "route": "interfaces/it06"
+              }
+            ]
+          },
+          {
+            "name": "Suivi des importations",
+            "code_arthus": "IT20",
+            "route": "interfaces/it20"
+          },
+          {
+            "name": "Liste des virements importés",
+            "code_arthus": "VR10",
+            "route": "interfaces/vr10"
+          },
+          {
+            "name": "Détail des virements importés",
+            "code_arthus": "VR18",
+            "route": "interfaces/vr18"
+          },
+          {
+            "name": "Importation des prestations Prest_IJ",
+            "code_arthus": "IJ00",
+            "children": [
+              {
+                "name": "Liste des remises Prest_IJ",
+                "code_arthus": "IJ01",
+                "route": "interfaces/ij01"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Exportations",
+        "code_arthus": "IT2B",
+        "children": [
+          {
+            "name": "Génération fichier d'exportation",
+            "code_arthus": "IT01T",
+            "route": "interfaces/it01t"
+          },
+          {
+            "name": "Suivi des exportations",
+            "code_arthus": "IT21",
+            "route": "interfaces/it21"
+          },
+          {
+            "name": "Fiche de paramétrage DSN",
+            "code_arthus": "AF09",
+            "children": [
+              {
+                "name": "Validation bdx. de fiches de paramétrage DSN",
+                "code_arthus": "PA04",
+                "route": "interfaces/pa04"
+              },
+              {
+                "name": "Liste des bordereaux de fiches de paramétrage",
+                "code_arthus": "PA06",
+                "route": "interfaces/pa06"
+              },
+              {
+                "name": "Génération de la fiche de paramétrage",
+                "code_arthus": "AF11T",
+                "route": "interfaces/af11t"
+              },
+              {
+                "name": "Annulation bdx. de fiches de paramétrage DSN",
+                "code_arthus": "AF13T",
+                "route": "interfaces/af13t"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Transfert",
+        "code_arthus": "IT2C",
+        "children": [
+          {
+            "name": "Clés de transfert",
+            "code_arthus": "IT06",
+            "route": "interfaces/it06"
+          },
+          {
+            "name": "Transfert d'adhésions",
+            "code_arthus": "TR05T",
+            "route": "interfaces/tr05t"
+          },
+          {
+            "name": "Suivi des transferts d'adhésion",
+            "code_arthus": "IT09",
+            "route": "interfaces/it09"
+          },
+          {
+            "name": "Report paramétrage produit sur contrat",
+            "code_arthus": "IT14",
+            "children": [
+              {
+                "name": "Tt. de comparaison du paramétrage produit/garantie",
+                "code_arthus": "TR17T",
+                "route": "interfaces/tr17t"
+              },
+              {
+                "name": "Tt. de report du paramétrage produit/garantie",
+                "code_arthus": "TR18T",
+                "route": "interfaces/tr18t"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

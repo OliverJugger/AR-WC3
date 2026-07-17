@@ -1,13 +1,27 @@
 <nav class="sidebar" [class.collapsed]="collapsed()">
-     
-  <button
-    mat-icon-button
-    class="collapse-toggle"
-    (click)="toggleCollapsed()"
-    [attr.aria-label]="collapsed() ? 'Déplier le menu' : 'Replier le menu'"
-  >
-    <mat-icon>{{ collapsed() ? 'menu' : 'close' }}</mat-icon>
-  </button>
+  <div class="sidebar-header">
+    <button
+      mat-icon-button
+      class="collapse-toggle"
+      (click)="toggleCollapsed()"
+      [attr.aria-label]="collapsed() ? 'Déplier le menu' : 'Replier le menu'">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-form-field class="sidebar-search" appearance="outline">
+      <input 
+        matInput type="search" 
+        [formControl]="searchControl"
+        placeholder="ar01, sinistre..."
+        #searchInput>
+      @if (searchControl.value) {
+        <button mat-icon-button matSuffix (click)="clearSearch(searchInput)" aria-label="Effacer">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </mat-form-field>
+  </div>
+
+  <mat-divider></mat-divider>
 
   @if (!collapsed()) {
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="nav-tree">
@@ -16,13 +30,15 @@
         *matTreeNodeDef="let node"
         matTreeNodePadding 
         [matTreeNodePaddingIndent]="14" 
-        class="tree-node">
+        class="tree-node"
+        >
 
         <a
           class="tree-leaf"
           [routerLink]="node.route"
+          [class.highlighted]="node.highlighted"
           routerLinkActive="active-link"
-          [matTooltip]="node.name"
+          [matTooltip]="(node.name) + ' (' + (node.code_arthus) + ')'"
           matTooltipPosition="right"
           matTooltipShowDelay="300"
         >
@@ -41,11 +57,15 @@
           mat-icon-button
           matTreeNodeToggle
           class="tree-toggle"
+          [class.highlighted]="node.highlighted"
           [attr.aria-label]="(treeControl.isExpanded(node) ? 'Replier ' : 'Déplier ') + node.name"
         >
           <mat-icon>{{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}</mat-icon>
         </button>
-        <span class="tree-label" [matTooltip]="node.name" matTooltipPosition="right" matTooltipShowDelay="300">
+        <span class="tree-label" 
+          [matTooltip]="(node.name) + ' (' + (node.code_arthus) + ')'"
+          matTooltipPosition="right" 
+          matTooltipShowDelay="300">
           {{ node.name }}
         </span>
       </mat-tree-node>

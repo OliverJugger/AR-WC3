@@ -1,0 +1,37 @@
+@if (totalPages > 1) {
+  <nav class="paginator" aria-label="Pagination">
+
+    <button
+      mat-icon-button
+      class="page-btn nav-btn"
+      [disabled]="currentPage === 1"
+      (click)="goTo(currentPage - 1)"
+      aria-label="Page précédente"
+    >
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    @for (item of pages; track $index) {
+      @if (isEllipsis(item)) {
+        <span class="ellipsis">…</span>
+      } @else {
+        <button
+          class="page-btn"
+          [class.active]="item === currentPage"
+          (click)="goTo(item)"
+          [attr.aria-current]="item === currentPage ? 'page' : null"
+        >{{ item }}</button>
+      }
+    }
+
+    <button
+      mat-icon-button
+      class="page-btn nav-btn"
+      [disabled]="currentPage === totalPages"
+      (click)="goTo(currentPage + 1)"
+      aria-label="Page suivante">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
+
+  </nav>
+}

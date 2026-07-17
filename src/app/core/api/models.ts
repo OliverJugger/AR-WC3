@@ -38,6 +38,13 @@ export interface StatisticsResponse {
   stat4: ChartDatum[];
 }
 
+export interface Pv22Response {
+  stat1: ChartDatum[];
+  stat2: ChartDatum[];
+  stat3: ChartDatum[];
+  stat4: ChartDatum[];
+}
+
 export interface ErrorResponse {
   message: string;
 }

@@ -1,0 +1,9 @@
+<div class="browse-container">
+  <div>Hello</div>
+  <app-paginator
+    [currentPage]="currentPage"
+    [totalCount]="totalCount"
+    [pageSize]="pageSize"
+    (pageChange)="onPageChange($event)"
+  />
+</div>
