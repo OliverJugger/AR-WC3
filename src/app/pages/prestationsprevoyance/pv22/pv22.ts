@@ -22,6 +22,7 @@ import {
   DossierSortField,
 } from './dossier.model';
 import { PaginatorComponent } from '../../../shared/paginator/paginator.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dossier-table',
@@ -42,6 +43,7 @@ import { PaginatorComponent } from '../../../shared/paginator/paginator.componen
     MatProgressBarModule,
     MatExpansionModule,
     MatTooltipModule,
+    RouterLink,
   ],
   templateUrl: './pv22.html',
   styleUrl: './pv22.scss',
@@ -60,6 +62,7 @@ export class Pv22 implements OnInit, OnDestroy {
     'dateDebut',
     'dateFin',
     'dateCloture',
+    'action',
   ];
 
   // ---- État réactif exposé au template -----------------------------------

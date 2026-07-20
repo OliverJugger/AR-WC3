@@ -1,1 +1,105 @@
-<p>pv10b works!</p>
+<div class="dossier-table-card">
+    <!-- ===================== Bloc de recherche ===================== -->
+    <h1>Dossier sinistre N° {{dossier()}}</h1>
+    <form class="search-form">
+      <div class="search-row search-row--primary">
+        <mat-form-field appearance="outline" class="field field--dossier">
+          <mat-label>{{ "Rechercher (2 caractères minimum) ... "}}</mat-label>
+          <input matInput 
+            [value]="search()"
+            (input)="search.set($any($event.target).value)"
+            placeholder="ex. DOS-2023-001045" />
+        </mat-form-field>
+      </div>
+    </form>
+  
+    <!-- ===================== Indicateur de chargement ===================== -->
+    <div class="progress-slot">
+      @if (loading()) {
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      }
+    </div>
+  
+    <!-- ===================== Tableau ===================== -->
+    <div class="table-wrapper">
+      <table
+        mat-table
+        [dataSource]="data()"
+        matSort
+        (matSortChange)="onSortChange($event)"
+        class="dossier-table"
+      >
+        <ng-container matColumnDef="numeroDossier">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>N° sinistre</th>
+          <td mat-cell *matCellDef="let row">{{ row.numeroDossier }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="numeroAssure">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date surveillance</th>
+          <td mat-cell *matCellDef="let row">{{ row.numeroAssure }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="assure">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Risque(s)</th>
+          <td mat-cell *matCellDef="let row">{{ assureLabel(row) }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dateDebut">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de fin</th>
+          <td mat-cell *matCellDef="let row">{{ row.dateDebut | date: 'dd/MM/yyyy' }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dateFin">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Motif de fin</th>
+          <td mat-cell *matCellDef="let row">{{ row.dateFin ? (row.dateFin | date: 'dd/MM/yyyy') : '—' }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dateCloture">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de clôture</th>
+          <td mat-cell *matCellDef="let row">{{ row.dateCloture ? (row.dateCloture | date: 'dd/MM/yyyy') : '—' }}</td>
+        </ng-container>
+        
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let row"> 
+            <a
+              mat-icon-button
+              class="action-view-dossier"
+              routerLink="/prestationsprevoyance/pv10b"
+              [queryParams]="{dossier: row.numeroDossier }">
+             <mat-icon>folder_shared</mat-icon>
+            </a>
+            <a
+              mat-icon-button
+              class="action-view-assure"
+              routerLink="/prestationsprevoyance/ba25"
+              [queryParams]="{ assure:  row.numeroAssure }">
+            <mat-icon>person</mat-icon>
+          </a>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell no-data-cell" [attr.colspan]="displayedColumns.length">
+            @if (loading()) {
+              Recherche en cours...
+            } @else {
+              Aucun dossier ne correspond à ces critères.
+            }
+          </td>
+        </tr>
+      </table>
+    </div>
+  
+    <!-- ===================== Pagination ===================== -->
+    <app-paginator
+      [currentPage]="pageIndex()"
+      [totalCount]="total()"
+      [pageSize]="pageSize()"
+      (pageChange)="onPageChange($event)"
+    />
+  </div>
+  
