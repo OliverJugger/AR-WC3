@@ -1,5 +1,4 @@
 import { Route, Routes } from '@angular/router';
-
 import { authGuard } from './core/guards/auth-guard';
 import { collectLeafRoutes, NAV_TREE } from './core/navigation/nav-tree';
 
@@ -47,9 +46,9 @@ export const routes: Routes = [
     loadComponent: () => import('./layout/main-layout').then((m) => m.MainLayout),
     canActivate: [authGuard],
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', redirectTo: 'menu', pathMatch: 'full' },
       {
-        path: 'home',
+        path: 'menu',
         loadComponent: () => import('./home/home').then((m) => m.Home),
         title: 'Accueil',
       },

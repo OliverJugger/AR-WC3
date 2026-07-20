@@ -17,6 +17,7 @@ export interface NavTreeNode {
   code_arthus: string;
   children?: NavTreeNode[];
   highlighted: boolean;
+  expandParent: boolean;
 }
 
 export const NAV_TREE: NavTreeNode[] = menu_tree.map(item => ({

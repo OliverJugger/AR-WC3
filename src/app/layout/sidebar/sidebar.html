@@ -9,12 +9,18 @@
     </button>
     <mat-form-field class="sidebar-search" appearance="outline">
       <input 
-        matInput type="search" 
-        [formControl]="searchControl"
-        placeholder="ar01, sinistre..."
+        matInput 
+        type="search"
+        [value]="searchSignal()"
+        (input)="searchSignal.set($any($event.target).value)"
+        placeholder="pv22, sinistre..."
         #searchInput>
-      @if (searchControl.value) {
-        <button mat-icon-button matSuffix (click)="clearSearch(searchInput)" aria-label="Effacer">
+      @if (searchSignal()) {
+        <button
+          mat-icon-button 
+          matSuffix
+          (click)="clearSearch(searchInput)" 
+          aria-label="Effacer">
           <mat-icon>close</mat-icon>
         </button>
       }

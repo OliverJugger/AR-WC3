@@ -25,7 +25,7 @@ export class PaginatorComponent implements OnChanges {
   }
 
   buildPages(): void {
-    this.totalPages = Math.ceil(this.totalCount / this.pageSize);
+    this.totalPages = Math.ceil((this.totalCount / this.pageSize) -1);
 
     if (this.totalPages <= 1) {
       this.pages = [];

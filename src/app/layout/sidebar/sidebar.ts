@@ -1,5 +1,5 @@
-import { Component, signal, computed, viewChild, ElementRef } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, signal, computed, viewChild, ElementRef, effect, WritableSignal, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -13,7 +13,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map } from 'rxjs';
+import { debouncedSignal } from '../../signal-utils';
 
 /** Nœud "aplati" consommé par mat-tree (voir l'exemple officiel "Tree with flat data source"). */
 interface FlatNavNode {
@@ -57,7 +58,24 @@ interface FlatNavNode {
 export class Sidebar {
   protected readonly collapsed = signal(false);
 
-  searchControl = new FormControl('', { nonNullable: true });
+  router = inject(Router);
+
+  currentUrlSignal = toSignal(
+    this.router.events.pipe(
+      filter((e): e is NavigationEnd => e instanceof NavigationEnd),
+      map(e => e.urlAfterRedirects)
+    ),
+    { initialValue: this.router.url }
+  );
+
+  currentUrlSuffixSignal = computed(() => {
+    const url = this.currentUrlSignal();
+    const match = url.match(/\/([^/?#]+)\/?(?:[?#].*)?$/);
+    return match?.[1] ?? '';
+  });
+
+  searchSignal = signal('');
+  searchSignalQuery = debouncedSignal(this.searchSignal, 300);
 
   private readonly treeFlattener = new MatTreeFlattener<NavTreeNode, FlatNavNode>(
     (node, level) => ({
@@ -83,15 +101,29 @@ export class Sidebar {
   protected readonly hasChild = (_: number, node: FlatNavNode): boolean => node.expandable;
 
   constructor() {
-    this.searchControl.valueChanges
-      .pipe(debounceTime(300), distinctUntilChanged())
-      .subscribe(query => this.search(query));
+    
+    effect(() => {
+      var query = this.searchSignalQuery() || '';
+      var currentUrl = this.currentUrlSuffixSignal();  
+      this.search(query);
+    })
 
-    this.dataSource.data = NAV_TREE;
+    this.setTreeData(NAV_TREE);
+  }
+
+  setTreeData(data: NavTreeNode[]) {
+    this.dataSource.data = data;
+    this.expandNodesWithFlag();
   }
 
   protected toggleCollapsed(): void {
     this.collapsed.update((value) => !value);
+  }
+
+  private expandNodesWithFlag() {
+    this.treeControl.dataNodes
+      .filter(node => node.expandable) // votre attribut porté sur le flat node
+      .forEach(node => this.treeControl.expand(node));
   }
 
   search(searchValue:string) {
@@ -100,15 +132,15 @@ export class Sidebar {
     this.dataSource.data = NAV_TREE;
 
     if (searchValue) {
-      this.dataSource.data = this.filterTree(NAV_TREE, searchValue);
+      this.setTreeData(this.filterTree(NAV_TREE, searchValue));
     }
   }
 
   clearSearch(input: HTMLInputElement) {
-    this.searchControl.setValue('');
+    this.searchSignal.set('');
     input.focus();
     this.resetHightLight(NAV_TREE);
-    this.dataSource.data = NAV_TREE;
+    this.setTreeData(NAV_TREE);
   }
 
   private resetHightLight(nodes: NavTreeNode[]) {
@@ -134,6 +166,7 @@ export class Sidebar {
   
       // On garde le nœud si son nom correspond OU si au moins un enfant correspond
       if (nameOrArthusCodeMatches || filteredChildren.length > 0) {
+        node.expandParent = nameOrArthusCodeMatches || filteredChildren.length > 0;
         node.highlighted = nameOrArthusCodeMatches;
         acc.push({
           ...node,
