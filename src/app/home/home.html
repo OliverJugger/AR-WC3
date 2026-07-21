@@ -1,5 +1,5 @@
 <div class="home">
-  <h1>Accueil</h1>
+  <h2>Accueil</h2>
 
   @if (loading()) {
     <div class="home-loading">
@@ -10,7 +10,7 @@
   } @else {
     <div class="charts-grid">
       @for (chart of charts(); track chart.title) {
-        <mat-card class="chart-card">
+        <mat-card class="chart-card" appearance="outlined">
           <mat-card-header>
             <mat-card-title>{{ chart.title }}</mat-card-title>
           </mat-card-header>

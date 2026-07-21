@@ -52,7 +52,7 @@ export class Login {
       next: (success) => {
         this.isSubmitting.set(false);
         if (success) {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/menu');
         } else {
           this.loginFailed.set(true);
         }

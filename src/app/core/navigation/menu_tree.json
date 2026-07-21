@@ -2,7 +2,7 @@
   {
     "name": "Accueil",
     "code_arthus": "menu",
-    "route": "home"
+    "route": "menu"
   },
   {
     "name": "Paramétrage",
