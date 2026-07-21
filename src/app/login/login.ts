@@ -23,8 +23,7 @@ import { NgOptimizedImage } from '@angular/common';
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    NgOptimizedImage,
-    MatDivider
+    NgOptimizedImage
 ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
