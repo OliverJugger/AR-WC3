@@ -152,6 +152,8 @@ export class DossierMockService {
     const baseDate = new Date(2019, 0, 1).getTime();
     const spanMs = 1000 * 60 * 60 * 24 * 365 * 6; // ~6 ans d'étalement
 
+    const maxNumDossier = 9999999;
+
     for (let i = 0; i < count; i++) {
       const genre: Genre = i % 2 === 0 ? 'M' : 'Mme';
       const nom = noms[i % noms.length];
@@ -174,8 +176,8 @@ export class DossierMockService {
 
       result.push({
         id: i + 1,
-        numeroDossier: `DOS-${(2019 + (i % 6))}-${String(1000 + i).padStart(6, '0')}`,
-        numeroAssure: `ASS${String(100000 + i * 7).padStart(8, '0')}`,
+        numeroDossier: `${String(Math.round(Math.random() * maxNumDossier)).padStart(7, '0')}`,
+        numeroAssure: `${String(100000 + i * 7).padStart(8, '0')}`,
         genre,
         nom,
         prenom,
@@ -193,3 +195,4 @@ export class DossierMockService {
     return days * 24 * 60 * 60 * 1000;
   }
 }
+

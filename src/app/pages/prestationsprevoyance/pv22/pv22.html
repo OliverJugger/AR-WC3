@@ -1,6 +1,6 @@
 <div class="dossier-table-card">
   <!-- ===================== Bloc de recherche ===================== -->
-  <h1>Liste des dossiers sinistres</h1>
+  <h2>Liste des dossiers sinistres</h2>
   <form class="search-form">
     <div class="search-row search-row--primary">
       <mat-form-field appearance="outline" class="field field--dossier">
@@ -31,12 +31,22 @@
     >
       <ng-container matColumnDef="numeroDossier">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>N° Dossier</th>
-        <td mat-cell *matCellDef="let row">{{ row.numeroDossier }}</td>
+        <td mat-cell *matCellDef="let row">
+          <a routerLink="/prestationsprevoyance/pv10b"
+            [queryParams]="{dossier: row.numeroDossier }">
+            {{ row.numeroDossier }}
+          </a>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="numeroAssure">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>N° Assuré</th>
-        <td mat-cell *matCellDef="let row">{{ row.numeroAssure }}</td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>N° Assuré</th>        
+        <td mat-cell *matCellDef="let row">
+          <a routerLink="/personnes/ga01"
+            [queryParams]="{assure: row.numeroAssure }">
+            {{ row.numeroAssure }}
+          </a>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="assure">
@@ -66,14 +76,18 @@
             mat-icon-button
             class="action-view-dossier"
             routerLink="/prestationsprevoyance/pv10b"
-            [queryParams]="{dossier: row.numeroDossier }">
+            [queryParams]="{dossier: row.numeroDossier }"
+            target="_blank"
+            [matTooltip]="'Ouvrir dans un nouvel onglet'">
            <mat-icon>folder_shared</mat-icon>
           </a>
           <a
             mat-icon-button
             class="action-view-assure"
-            routerLink="/prestationsprevoyance/ba25"
-            [queryParams]="{ assure:  row.numeroAssure }">
+            routerLink="/personnes/ga01"
+            [queryParams]="{assure:  row.numeroAssure}"
+            target="_blank"
+            [matTooltip]="'Ouvrir dans un nouvel onglet'">
           <mat-icon>person</mat-icon>
         </a>
         </td>

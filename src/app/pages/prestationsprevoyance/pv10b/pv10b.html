@@ -1,105 +1,121 @@
-<div class="dossier-table-card">
-    <!-- ===================== Bloc de recherche ===================== -->
-    <h1>Dossier sinistre N° {{dossier()}}</h1>
-    <form class="search-form">
-      <div class="search-row search-row--primary">
-        <mat-form-field appearance="outline" class="field field--dossier">
-          <mat-label>{{ "Rechercher (2 caractères minimum) ... "}}</mat-label>
-          <input matInput 
-            [value]="search()"
-            (input)="search.set($any($event.target).value)"
-            placeholder="ex. DOS-2023-001045" />
-        </mat-form-field>
-      </div>
-    </form>
+<div class="dossier-container">
+
+    <div class="dossier-container-header">
+        <h2>Dossier sinistre N° {{dossier()}}</h2>
+        <a mat-icon-button
+            [matTooltip]="'Retour à la liste des dossiers sinistres'"
+            routerLink="/prestationsprevoyance/pv22">
+        <mat-icon>arrow_back</mat-icon>
+        </a>
+    </div>    
+
+    <!-- Ligne du haut : 2 cards -->
+    <div class="top-row">
   
-    <!-- ===================== Indicateur de chargement ===================== -->
-    <div class="progress-slot">
-      @if (loading()) {
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-      }
+      <!-- Card Assuré -->
+      <mat-card class="assure-card" appearance="outlined">
+        <mat-card-content>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">N° Dossier</span>
+              <span class="value">{{ assure().numeroDossier }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">N° Assuré</span>
+              <span class="value">{{ assure().numeroAssure }}</span>
+            </div>
+            <div class="info-item full-width">
+              <span class="label">Nom</span>
+              <span class="value">{{ nomCompletAssure() }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Date ouverture</span>
+              <span class="value">{{ assure().dateOuverture | date: 'dd/MM/yyyy' }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Date fin</span>
+              <span class="value">{{ (assure().dateFin | date: 'dd/MM/yyyy') || '—' }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Date clôture</span>
+              <span class="value">{{ (assure().dateCloture | date: 'dd/MM/yyyy') || '—' }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Card Gestionnaire -->
+      <mat-card class="gestionnaire-card" appearance="outlined">
+        <mat-card-content>
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">N° Gestionnaire</span>
+              <span class="value">{{ gestionnaire().numeroGestionnaire }}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Nom Prénom</span>
+              <span class="value">{{ nomCompletGestionnaire() }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+  
     </div>
   
-    <!-- ===================== Tableau ===================== -->
-    <div class="table-wrapper">
-      <table
-        mat-table
-        [dataSource]="data()"
-        matSort
-        (matSortChange)="onSortChange($event)"
-        class="dossier-table"
-      >
-        <ng-container matColumnDef="numeroDossier">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>N° sinistre</th>
-          <td mat-cell *matCellDef="let row">{{ row.numeroDossier }}</td>
-        </ng-container>
+    <!-- Card du bas : tableau des sinistres -->
+    <mat-card class="sinistres-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Sinistres</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <div class="table-wrapper">
+          <table mat-table [dataSource]="sinistres()" class="sinistres-table">
   
-        <ng-container matColumnDef="numeroAssure">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date surveillance</th>
-          <td mat-cell *matCellDef="let row">{{ row.numeroAssure }}</td>
-        </ng-container>
+            <ng-container matColumnDef="numeroSinistre">
+              <th mat-header-cell *matHeaderCellDef>N° sinistre</th>
+              <td mat-cell *matCellDef="let s">{{ s.numeroSinistre }}</td>
+            </ng-container>
   
-        <ng-container matColumnDef="assure">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Risque(s)</th>
-          <td mat-cell *matCellDef="let row">{{ assureLabel(row) }}</td>
-        </ng-container>
+            <ng-container matColumnDef="dateSurveillance">
+              <th mat-header-cell *matHeaderCellDef>Date surveillance</th>
+              <td mat-cell *matCellDef="let s">{{ s.dateSurveillance | date: 'dd/MM/yyyy' }}</td>
+            </ng-container>
   
-        <ng-container matColumnDef="dateDebut">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de fin</th>
-          <td mat-cell *matCellDef="let row">{{ row.dateDebut | date: 'dd/MM/yyyy' }}</td>
-        </ng-container>
+            <ng-container matColumnDef="risque">
+              <th mat-header-cell *matHeaderCellDef>Risque(s)</th>
+              <td mat-cell *matCellDef="let s">
+                <span
+                  class="risque-badge"
+                  [style.background]="getRisqueColor(s.risque)"
+                  [style.color]="getRisqueTextColor(s.risque)"
+                  [attr.aria-label]="'Niveau de risque ' + s.risque + ' sur 5'"
+                >
+                  {{ s.risque }}
+                </span>
+              </td>
+            </ng-container>
   
-        <ng-container matColumnDef="dateFin">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Motif de fin</th>
-          <td mat-cell *matCellDef="let row">{{ row.dateFin ? (row.dateFin | date: 'dd/MM/yyyy') : '—' }}</td>
-        </ng-container>
+            <ng-container matColumnDef="dateFin">
+              <th mat-header-cell *matHeaderCellDef>Date fin</th>
+              <td mat-cell *matCellDef="let s">{{ (s.dateFin | date: 'dd/MM/yyyy') || '—' }}</td>
+            </ng-container>
   
-        <ng-container matColumnDef="dateCloture">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de clôture</th>
-          <td mat-cell *matCellDef="let row">{{ row.dateCloture ? (row.dateCloture | date: 'dd/MM/yyyy') : '—' }}</td>
-        </ng-container>
-        
-        <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let row"> 
-            <a
-              mat-icon-button
-              class="action-view-dossier"
-              routerLink="/prestationsprevoyance/pv10b"
-              [queryParams]="{dossier: row.numeroDossier }">
-             <mat-icon>folder_shared</mat-icon>
-            </a>
-            <a
-              mat-icon-button
-              class="action-view-assure"
-              routerLink="/prestationsprevoyance/ba25"
-              [queryParams]="{ assure:  row.numeroAssure }">
-            <mat-icon>person</mat-icon>
-          </a>
-          </td>
-        </ng-container>
+            <ng-container matColumnDef="motifFin">
+              <th mat-header-cell *matHeaderCellDef>Motif de fin</th>
+              <td mat-cell *matCellDef="let s">{{ s.motifFin || '—' }}</td>
+            </ng-container>
   
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
   
-        <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell no-data-cell" [attr.colspan]="displayedColumns.length">
-            @if (loading()) {
-              Recherche en cours...
-            } @else {
-              Aucun dossier ne correspond à ces critères.
-            }
-          </td>
-        </tr>
-      </table>
-    </div>
+          @if (sinistres().length === 0) {
+            <p class="empty-state">Aucun sinistre enregistré.</p>
+          }
+        </div>
+      </mat-card-content>
+    </mat-card>
   
-    <!-- ===================== Pagination ===================== -->
-    <app-paginator
-      [currentPage]="pageIndex()"
-      [totalCount]="total()"
-      [pageSize]="pageSize()"
-      (pageChange)="onPageChange($event)"
-    />
   </div>
   

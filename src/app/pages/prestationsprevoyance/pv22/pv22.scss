@@ -3,6 +3,8 @@
 }
 
 table {
+
+
   tr:nth-child(even) {
     background-color: #f5f5f5;
   }
@@ -17,7 +19,7 @@ table {
   
   tr.mat-mdc-row:hover{
     background-color: rgba(0, 0, 0, 0.04); // hover state Material standard
-  }
+  }  
   
 }
 

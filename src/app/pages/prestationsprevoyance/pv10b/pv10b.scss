@@ -1,102 +1,94 @@
-:host {
-  display: block;
-}
-
-table {
-  tr:nth-child(even) {
-    background-color: #f5f5f5;
-  }
-
-  tr:nth-child(odd) {
-    background-color: #ffffff;
-  }
-
-  th:last-child {
-    width: 10%;
-  }
-  
-  tr.mat-mdc-row:hover{
-    background-color: rgba(0, 0, 0, 0.04); // hover state Material standard
-  }
-  
-}
-
-.dossier-table-card {
+.dossier-container {
   display: flex;
   flex-direction: column;
   padding: 30px;
-  gap: 8px; 
+  gap: 12px;
   background-color: var(--mat-card-elevated-container-color, var(--mat-sys-surface-container-low));
-
-  app-paginator {
-    position: sticky;
-    bottom: 0px;
-    margin-bottom: 0px;
-  }
-
 }
 
-// ---------------------------------------------------------------------
-// Formulaire de recherche
-// ---------------------------------------------------------------------
-.search-form {
+.dossier-container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  h2 {
+    width: 50%;
+  }
+}
+
+.top-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  mat-card {
+    flex: 1 1 320px;
+  }
+}
+
+mat-card-header {
+  margin-bottom: 8px;
+}
+
+mat-divider {
+  margin-bottom: 8px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  padding-top: 8px;
+}
+
+.info-item {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-bottom: 4px;
+  gap: 2px;
+
+  &.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.6));
+  }
+
+  .value {
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
 
-.search-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.field {
-  flex: 1 1 200px;
-  min-width: 180px;
-}
-
-.field--dossier,
-.field--assure-num {
-  flex: 1 1 200px;
-}
-
-.field--assure {
-  flex: 1 1 240px;
-}
-
-.search-actions {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: auto;
-  flex: 0 0 auto;
-}
-
-// ---------------------------------------------------------------------
-// Zone de progression (réserve la hauteur pour éviter le "layout shift")
-// ---------------------------------------------------------------------
-.progress-slot {
-  height: 4px;
-}
-
-// ---------------------------------------------------------------------
-// Tableau
-// ---------------------------------------------------------------------
-.table-wrapper {
-  overflow-x: auto;
-  border-radius: 1%;
-}
-
-.dossier-table {
+.sinistres-card {
   width: 100%;
 }
 
-.no-data-cell {
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.sinistres-table {
+  width: 100%;
+}
+
+.risque-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.empty-state {
+  padding: 16px 0;
   text-align: center;
-  padding: 24px 0;
   color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.6));
-  font-style: italic;
 }
