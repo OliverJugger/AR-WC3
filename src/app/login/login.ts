@@ -9,9 +9,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AuthStore } from '../core/services/auth-store';
+import { MatDivider } from "@angular/material/divider";
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [
     ReactiveFormsModule,
     MatButtonModule,
@@ -20,7 +23,9 @@ import { AuthStore } from '../core/services/auth-store';
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
-  ],
+    NgOptimizedImage,
+    MatDivider
+],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })

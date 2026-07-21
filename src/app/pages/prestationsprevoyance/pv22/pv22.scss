@@ -27,7 +27,7 @@ table {
   display: flex;
   flex-direction: column;
   padding: 30px;
-  gap: 8px; 
+  gap: 8px;
   background-color: var(--mat-card-elevated-container-color, var(--mat-sys-surface-container-low));
 
   app-paginator {
@@ -90,6 +90,7 @@ table {
 .table-wrapper {
   overflow-x: auto;
   border-radius: 1%;
+  border: 1px solid rgb(203, 196, 207) ;
 }
 
 .dossier-table {
