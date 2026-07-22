@@ -140,11 +140,13 @@ export class DossierMockService {
   // ---------------------------------------------------------------------
 
   private generateMockData(count: number): DossierAssure[] {
-    const noms = ['PENICHE', 'JE TAIME', 'TE AMO', 'GUAPITA'
-      
+    const noms = [
+      'MARTIN', 'BERNARD', 'THOMAS', 'ROBERT', 'PETIT', 'DURAND', 'LEROY',
+      'MOREAU', 'SIMON', 'LAURENT', 'LEFEBVRE', 'MICHEL', 'GARCIA', 'DAVID',
+      'BERTRAND', 'ROUX', 'VINCENT', 'FONTAINE', 'CHEVALIER', 'GAUTHIER',
     ];
-    const prenomsH = ['Maria'];
-    const prenomsF = ['Maria', 'Maria'];
+    const prenomsH = ['Jean', 'Pierre', 'Michel', 'Alain', 'Philippe', 'Nicolas', 'Olivier', 'Marc'];
+    const prenomsF = ['Marie', 'Sophie', 'Isabelle', 'Nathalie', 'Catherine', 'Julie', 'Claire', 'Sandrine'];
 
     const result: DossierAssure[] = [];
     const baseDate = new Date(2019, 0, 1).getTime();
