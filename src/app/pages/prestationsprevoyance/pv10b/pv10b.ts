@@ -15,10 +15,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Subject } from 'rxjs';
 
-import { DossierMockService } from '../pv22/dossier-mock.service';
-import {
-  DossierAssure,
-} from '../pv22/dossier.model';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatDividerModule } from '@angular/material/divider';
@@ -106,13 +102,7 @@ export class Pv10b implements OnInit, OnDestroy {
   dossier = computed(() => this.queryParams()?.['dossier']);
 
   private readonly fb = inject(FormBuilder);
-  private readonly dossierService = inject(DossierMockService);
   private readonly destroy$ = new Subject<void>();
-
-  // ---- État réactif exposé au template -----------------------------------
-  readonly data = signal<DossierAssure[]>([]);
-  readonly total = signal(0);
-  readonly loading = signal(false);
 
   ngOnInit(): void {
     console.log('Pv10bComponent chargé, dossier =', this.dossier());
@@ -166,11 +156,6 @@ export class Pv10b implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-  }  
-
-  /** Libellé affiché dans la colonne "Assuré" : Genre + Nom + Prénom. */
-  assureLabel(row: DossierAssure): string {
-    return `${row.genre} ${row.nom} ${row.prenom}`;
   }
 }
 

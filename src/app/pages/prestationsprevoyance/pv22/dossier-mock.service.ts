@@ -1,32 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
+
+import { DossierSearchApi } from './dossier-search-api';
 import {
-  DossierAssure,
-  DossierSearchCriteria,
+  DossierIndividu,
   DossierSearchRequest,
-  DossierSearchResult,
-  Genre,
+  DossierSinistre,
+  DossierSinistreCriteria,
+  PageDossierSinistre,
 } from './dossier.model';
 
 /**
- * Service FICTIF simulant un back-end.
- * - Génère un jeu de données brutes en mémoire au démarrage.
+ * Service FICTIF simulant le back-end.
+ * - Génère un jeu de données brutes en mémoire au démarrage, au format du
+ *   contrat (`DossierSinistre` avec `Individu` imbriqué).
  * - Applique la recherche multi-critères et la pagination côté "serveur" simulé.
- * - Le composant appelant n'a aucune connaissance du stockage : il envoie une
- *   requête (critères + pagination + tri) et reçoit un résultat paginé.
  *
- * À remplacer par un vrai service HttpClient pointant vers l'API réelle
- * (même interface publique : search(request) => Observable<DossierSearchResult>).
+ * Voir `DossierSinistreApiService` pour l'implémentation réelle (HttpClient)
+ * respectant la même interface `DossierSearchApi`.
  */
 @Injectable({ providedIn: 'root' })
-export class DossierMockService {
+export class DossierMockService extends DossierSearchApi {
   /** Latence artificielle pour simuler un appel réseau (ms). */
   private static readonly SIMULATED_LATENCY = 350;
 
-  private readonly dossiers: DossierAssure[] = this.generateMockData(137);
+  private readonly dossiers: DossierSinistre[] = this.generateMockData(137);
 
-  search(request: DossierSearchRequest): Observable<DossierSearchResult> {
+  search(request: DossierSearchRequest): Observable<PageDossierSinistre> {
     const filtered = this.applyFilters(this.dossiers, request.criteria);
     const sorted = this.applySort(
       filtered,
@@ -34,18 +35,19 @@ export class DossierMockService {
       request.sortDirection ?? ''
     );
 
-    const start = request.pageIndex * request.pageSize;
-    const end = start + request.pageSize;
+    const start = request.page * request.size;
+    const end = start + request.size;
+    const data = sorted.slice(start, end);
 
-    const result: DossierSearchResult = {
-      items: sorted.slice(start, end),
-      total: sorted.length,
+    const result: PageDossierSinistre = {
+      page: request.page,
+      pageSize: request.size,
+      count: data.length,
+      totalCount: sorted.length,
+      data,
     };
 
-    return of(result).pipe(
-      delay(DossierMockService.SIMULATED_LATENCY),
-      map((r) => r)
-    );
+    return of(result).pipe(delay(DossierMockService.SIMULATED_LATENCY));
   }
 
   // ---------------------------------------------------------------------
@@ -53,27 +55,46 @@ export class DossierMockService {
   // ---------------------------------------------------------------------
 
   private applyFilters(
-    data: DossierAssure[],
-    criteria: DossierSearchCriteria
-  ): DossierAssure[] {
+    data: DossierSinistre[],
+    criteria: DossierSinistreCriteria
+  ): DossierSinistre[] {
     return data.filter((d) => {
-      if(!criteria.genericSearch)
-        return true;
-      return criteria.genericSearch &&
-        (this.contains(d.numeroDossier, criteria.genericSearch)
-        || this.contains(d.numeroAssure, criteria.genericSearch)
-        || this.contains(`${d.genre} ${d.nom} ${d.prenom}`, criteria.genericSearch)
-        || this.contains(d.numeroAssure, criteria.genericSearch)
-        || this.contains(d.numeroAssure, criteria.genericSearch)
-      );
+      if (criteria.nomIndividuContains && !this.contains(d.individu?.nom, criteria.nomIndividuContains)) {
+        return false;
+      }
+      if (
+        criteria.prenomIndividuContains &&
+        !this.contains(d.individu?.prenom, criteria.prenomIndividuContains)
+      ) {
+        return false;
+      }
+      if (criteria.anterieur !== undefined && criteria.anterieur !== null) {
+        const isAnterieur = d.anterieur === 'O';
+        if (isAnterieur !== criteria.anterieur) {
+          return false;
+        }
+      }
+      if (criteria.finNull !== undefined && criteria.finNull !== null) {
+        const finEstNulle = !d.fin;
+        if (finEstNulle !== criteria.finNull) {
+          return false;
+        }
+      }
+      if (!this.inRange(d.debut, criteria.debutFrom, criteria.debutTo)) {
+        return false;
+      }
+      if (!this.inRange(d.fin, criteria.finFrom, criteria.finTo)) {
+        return false;
+      }
+      return true;
     });
   }
 
-  private contains(value: string, search: string): boolean {
-    return value.toLocaleLowerCase().includes(search.trim().toLocaleLowerCase());
+  private contains(value: string | undefined, search: string): boolean {
+    return (value ?? '').toLocaleLowerCase().includes(search.trim().toLocaleLowerCase());
   }
 
-  private inRange(value: Date | null, from?: Date | null, to?: Date | null): boolean {
+  private inRange(value: string | null | undefined, from?: string, to?: string): boolean {
     if (!from && !to) {
       return true;
     }
@@ -81,11 +102,11 @@ export class DossierMockService {
       // Une ligne sans date (ex: dossier non clôturé) ne matche pas un filtre de plage.
       return false;
     }
-    const time = this.stripTime(value).getTime();
-    if (from && time < this.stripTime(from).getTime()) {
+    const time = this.stripTime(new Date(value)).getTime();
+    if (from && time < this.stripTime(new Date(from)).getTime()) {
       return false;
     }
-    if (to && time > this.stripTime(to).getTime()) {
+    if (to && time > this.stripTime(new Date(to)).getTime()) {
       return false;
     }
     return true;
@@ -96,32 +117,32 @@ export class DossierMockService {
   }
 
   // ---------------------------------------------------------------------
-  // Tri
+  // Tri (mock uniquement : le contrat ne définit pas de tri serveur)
   // ---------------------------------------------------------------------
 
   private applySort(
-    data: DossierAssure[],
+    data: DossierSinistre[],
     field: DossierSearchRequest['sortField'],
     direction: 'asc' | 'desc' | ''
-  ): DossierAssure[] {
+  ): DossierSinistre[] {
     if (!field || !direction) {
       return data;
     }
     const factor = direction === 'asc' ? 1 : -1;
-    const getValue = (d: DossierAssure): string | number => {
+    const getValue = (d: DossierSinistre): string | number => {
       switch (field) {
         case 'numeroDossier':
-          return d.numeroDossier;
+          return d.idDossier;
         case 'numeroAssure':
-          return d.numeroAssure;
+          return d.individu?.numassu ?? 0;
         case 'assure':
-          return `${d.nom} ${d.prenom}`;
+          return `${d.individu?.nom ?? ''} ${d.individu?.prenom ?? ''}`;
         case 'dateDebut':
-          return d.dateDebut?.getTime() ?? 0;
+          return d.debut ? new Date(d.debut).getTime() : 0;
         case 'dateFin':
-          return d.dateFin?.getTime() ?? 0;
+          return d.fin ? new Date(d.fin).getTime() : 0;
         case 'dateCloture':
-          return d.dateCloture?.getTime() ?? 0;
+          return d.cloture ? new Date(d.cloture).getTime() : 0;
         default:
           return '';
       }
@@ -139,7 +160,7 @@ export class DossierMockService {
   // Génération de données fictives
   // ---------------------------------------------------------------------
 
-  private generateMockData(count: number): DossierAssure[] {
+  private generateMockData(count: number): DossierSinistre[] {
     const noms = [
       'MARTIN', 'BERNARD', 'THOMAS', 'ROBERT', 'PETIT', 'DURAND', 'LEROY',
       'MOREAU', 'SIMON', 'LAURENT', 'LEFEBVRE', 'MICHEL', 'GARCIA', 'DAVID',
@@ -148,16 +169,16 @@ export class DossierMockService {
     const prenomsH = ['Jean', 'Pierre', 'Michel', 'Alain', 'Philippe', 'Nicolas', 'Olivier', 'Marc'];
     const prenomsF = ['Marie', 'Sophie', 'Isabelle', 'Nathalie', 'Catherine', 'Julie', 'Claire', 'Sandrine'];
 
-    const result: DossierAssure[] = [];
+    const result: DossierSinistre[] = [];
     const baseDate = new Date(2019, 0, 1).getTime();
     const spanMs = 1000 * 60 * 60 * 24 * 365 * 6; // ~6 ans d'étalement
 
-    const maxNumDossier = 9999999;
+    const maxIdDossier = 999999999;
 
     for (let i = 0; i < count; i++) {
-      const genre: Genre = i % 2 === 0 ? 'M' : 'Mme';
+      const sexe = i % 2 === 0 ? 1 : 2; // 1 = M, 2 = Mme
       const nom = noms[i % noms.length];
-      const prenom = genre === 'M' ? prenomsH[i % prenomsH.length] : prenomsF[i % prenomsF.length];
+      const prenom = sexe === 1 ? prenomsH[i % prenomsH.length] : prenomsF[i % prenomsF.length];
 
       const dateDebut = new Date(baseDate + Math.random() * spanMs);
 
@@ -174,16 +195,22 @@ export class DossierMockService {
         ? new Date(dateFin!.getTime() + this.randomDays(1, 60))
         : null;
 
-      result.push({
-        id: i + 1,
-        numeroDossier: `${String(Math.round(Math.random() * maxNumDossier)).padStart(7, '0')}`,
-        numeroAssure: `${String(100000 + i * 7).padStart(8, '0')}`,
-        genre,
+      const individu: DossierIndividu = {
+        numindiv: 1000 + i,
         nom,
         prenom,
-        dateDebut,
-        dateFin,
-        dateCloture,
+        sexe,
+        numassu: 100000 + i * 7,
+      };
+
+      result.push({
+        idDossier: `${String(Math.round(Math.random() * maxIdDossier)).padStart(9, '0')}`,
+        refExt: null,
+        individu,
+        anterieur: Math.random() < 0.15 ? 'O' : 'N',
+        debut: dateDebut.toISOString(),
+        fin: dateFin ? dateFin.toISOString() : null,
+        cloture: dateCloture ? dateCloture.toISOString() : null,
       });
     }
 
@@ -195,4 +222,3 @@ export class DossierMockService {
     return days * 24 * 60 * 60 * 1000;
   }
 }
-
