@@ -127,11 +127,9 @@ export class Sidebar {
   }
 
   search(searchValue:string) {
-    // reset avec highlight systematiquement
-    this.resetHightLight(NAV_TREE);
-    this.dataSource.data = NAV_TREE;
-
     if (searchValue) {
+      this.resetHightLight(NAV_TREE);
+      this.dataSource.data = NAV_TREE;
       this.setTreeData(this.filterTree(NAV_TREE, searchValue));
     }
   }
@@ -141,6 +139,11 @@ export class Sidebar {
     input.focus();
     this.resetHightLight(NAV_TREE);
     this.setTreeData(NAV_TREE);
+    this.treeControl.collapseAll();
+  }
+
+  collapseAllMenu() {
+    this.treeControl.collapseAll();
   }
 
   private resetHightLight(nodes: NavTreeNode[]) {
