@@ -25,10 +25,10 @@ import { NgOptimizedImage } from '@angular/common';
     MatProgressSpinnerModule,
     NgOptimizedImage
 ],
-  templateUrl: './login.html',
-  styleUrl: './login.scss',
+  templateUrl: './login-page.html',
+  styleUrl: './login-page.scss',
 })
-export class Login {
+export class LoginPage {
   private readonly fb = inject(FormBuilder);
   private readonly authStore = inject(AuthStore);
   private readonly router = inject(Router);

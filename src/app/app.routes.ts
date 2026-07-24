@@ -37,8 +37,8 @@ const navTreeRoutes: Routes = collectLeafRoutes(NAV_TREE)
 
 export const routes: Routes = [
   {
-    path: 'login',
-    loadComponent: () => import('./login/login').then((m) => m.Login),
+    path: 'connexion',
+    loadComponent: () => import('./login/login-page').then((m) => m.LoginPage),
     title: 'Connexion',
   },
   {
@@ -55,5 +55,5 @@ export const routes: Routes = [
       ...navTreeRoutes,
     ],
   },
-  { path: '**', redirectTo: 'login' },
+  { path: '**', redirectTo: 'connexion' },
 ];
