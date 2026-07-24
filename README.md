@@ -29,6 +29,16 @@ aucune autre étape n'est nécessaire.
 npm start
 ```
 
+## Avec backend :
+
+Modifier environment.ts :
+useMock: false,
+apiUrl: 'http://localhost:8080',
+
+```bash
+ng serve --proxy-config proxy.conf.json 
+```
+
 Puis ouvrez http://localhost:4200. Le formulaire de connexion accepte
 n'importe quel couple identifiant/mot de passe non vide (validation "requis"
 uniquement) et redirige systématiquement vers `/home`.
