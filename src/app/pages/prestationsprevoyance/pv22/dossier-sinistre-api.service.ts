@@ -28,7 +28,7 @@ export class DossierSinistreApiService extends DossierSearchApi {
       .set('size', request.size);
 
     return this.http.post<PageDossierSinistre>(
-      `${environment.apiUrl}/prestations-prevoyance/dossier-sinistre/recherche`,
+      '/prestations-prevoyance/dossier-sinistre/recherche',
       request.criteria,
       { params }
     );

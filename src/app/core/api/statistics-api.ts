@@ -14,6 +14,6 @@ export class StatisticsApi {
   private readonly http = inject(HttpClient);
 
   getStatistics(): Observable<StatisticsResponse> {
-    return this.http.get<StatisticsResponse>(`${environment.apiUrl}/statistics`);
+    return this.http.get<StatisticsResponse>('/statistics');
   }
 }

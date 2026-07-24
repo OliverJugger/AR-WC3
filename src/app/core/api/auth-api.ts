@@ -14,6 +14,6 @@ export class AuthApi {
   private readonly http = inject(HttpClient);
 
   login(request: LoginRequest): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${environment.apiUrl}/login`, request);
+    return this.http.post<LoginResponse>('/login', request);
   }
 }
