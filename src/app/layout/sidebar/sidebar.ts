@@ -104,11 +104,11 @@ export class Sidebar {
     
     effect(() => {
       var query = this.searchSignalQuery() || '';
-      var currentUrl = this.currentUrlSuffixSignal();  
       this.search(query);
     })
 
     this.setTreeData(NAV_TREE);
+    this.treeControl.collapseAll();
   }
 
   setTreeData(data: NavTreeNode[]) {

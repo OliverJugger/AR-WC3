@@ -41,11 +41,15 @@ table {
 // ---------------------------------------------------------------------
 // Formulaire de recherche
 // ---------------------------------------------------------------------
+
+.search-expension-panel {
+  padding-top: 16px;
+}
+
 .search-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-bottom: 4px;
+  gap: 6px;
 }
 
 .search-row {

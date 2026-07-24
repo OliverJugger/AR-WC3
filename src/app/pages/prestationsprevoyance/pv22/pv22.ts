@@ -27,6 +27,7 @@ import {
 } from './dossier.model';
 import { PaginatorComponent } from '../../../shared/paginator/paginator.component';
 import { RouterLink } from '@angular/router';
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-dossier-table',
@@ -48,6 +49,7 @@ import { RouterLink } from '@angular/router';
     MatProgressBarModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatMenuModule,
     RouterLink,
   ],
   templateUrl: './pv22.html',
@@ -91,11 +93,14 @@ export class Pv22 implements OnInit, OnDestroy {
   private sortField: DossierSortField | null = null;
   private sortDirection: 'asc' | 'desc' | '' = '';
 
-  search = signal('');
+  searchDossier = signal('');
+  searchAssure = signal('');
+  searchContrat = signal('');
   previousValue = '';
 
   /** Filtres avancés (contrat : `DossierSinistreCriteria`, hors nom). */
   readonly filtersForm = this.fb.group({
+    nomIndividuContains: [''],
     prenomIndividuContains: [''],
     anterieur: [null as boolean | null],
     finNull: [null as boolean | null],
@@ -107,10 +112,12 @@ export class Pv22 implements OnInit, OnDestroy {
 
   constructor() {
     effect(() => {
-      if(this.previousValue !== this.search()) {
+      if(this.previousValue !== this.searchDossier()
+        || this.previousValue !== this.searchAssure()
+        || this.previousValue !== this.searchContrat()) {
         this.onSearch();
       }
-      this.previousValue = this.search();
+      this.previousValue = this.searchDossier();
     });
   }
 
@@ -168,7 +175,8 @@ export class Pv22 implements OnInit, OnDestroy {
 
     const formValue = this.filtersForm.getRawValue();
     const criteria: DossierSinistreCriteria = {
-      nomIndividuContains: this.search().trim() || undefined,
+      // nomIndividuContains: this.search().trim() || undefined,
+      nomIndividuContains: formValue.nomIndividuContains?.trim() || undefined,
       prenomIndividuContains: formValue.prenomIndividuContains?.trim() || undefined,
       anterieur: formValue.anterieur ?? undefined,
       finNull: formValue.finNull ?? undefined,
