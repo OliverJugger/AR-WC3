@@ -13,7 +13,7 @@ import { MatDivider } from "@angular/material/divider";
 import { NgOptimizedImage } from '@angular/common';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-connexion',
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -25,10 +25,10 @@ import { NgOptimizedImage } from '@angular/common';
     MatProgressSpinnerModule,
     NgOptimizedImage
 ],
-  templateUrl: './login-page.html',
-  styleUrl: './login-page.scss',
+  templateUrl: './connexion-page.html',
+  styleUrl: './connexion-page.scss',
 })
-export class LoginPage {
+export class Connexion {
   private readonly fb = inject(FormBuilder);
   private readonly authStore = inject(AuthStore);
   private readonly router = inject(Router);
