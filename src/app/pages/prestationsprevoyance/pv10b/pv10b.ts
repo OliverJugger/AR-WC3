@@ -37,8 +37,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatProgressBarModule,
     MatExpansionModule,
     MatTooltipModule,
-    MatDividerModule,
-    RouterLink,
+    MatDividerModule
   ],
   templateUrl: './pv10b.html',
   styleUrl: './pv10b.scss',
