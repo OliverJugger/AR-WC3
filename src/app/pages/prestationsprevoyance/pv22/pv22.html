@@ -182,19 +182,25 @@
               
           <mat-menu #menu="matMenu">
 		  
-			<a mat-menu-item routerLink="/p36b"
+			<a mat-menu-item routerLink="/production/pv36b"
 				[queryParams]="{dossier: row.idDossier }">
 			  <span>Instruction sinistre</span>
 			</a>
-			<a mat-menu-item routerLink="/p15"
+			<a mat-menu-item 
+        disabled="true"
+        routerLink="/prestationsprevoyance/pv15"
 				[queryParams]="{dossier: row.idDossier }">
 			  <span>Suivi des paiements</span>
 			</a>
-			<a mat-menu-item routerLink="/ga18"
+			<a mat-menu-item 
+        disabled="true"
+        routerLink="/personnes/ga18"
 				[queryParams]="{dossier: row.idDossier }">
 			  <span>Informations "portes externes"</span>
 			</a>
-			<a mat-menu-item routerLink="/af14"
+			<a mat-menu-item 
+        disabled="true"
+        routerLink="/interfaces/af14"
 				[queryParams]="{dossier: row.idDossier }">
 			  <span>Listes des arrêts DSN</span>
 			</a>

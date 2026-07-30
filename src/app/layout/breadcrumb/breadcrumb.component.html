@@ -7,7 +7,9 @@
         }
 
         @if (segment.clickable && !last) {
-          <a [routerLink]="segment.url" class="breadcrumb__link">
+          <a [routerLink]="segment.path"
+          [queryParams]="segment.queryParams"
+           class="breadcrumb__link">
             {{ segment.label }}
           </a>
         } @else {
