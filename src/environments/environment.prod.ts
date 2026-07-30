@@ -7,6 +7,7 @@
  */
 export const environment = {
   production: true,
+  envName: 'PROD',
   useMock: false,
   apiUrl: 'https://api.example.com',
 };

@@ -1,4 +1,13 @@
 <mat-toolbar class="header">
+
+  @if (envName !== 'PROD') {    
+    <div class="env-ribbon-wrap">
+      <div class="env-ribbon" [ngClass]="envClass()">
+        {{ envName }}
+      </div>
+    </div>
+  }
+
   <div class="header-left">
     <img src="logo.png" alt="Logo AR-WC3" class="logo" />
   </div>

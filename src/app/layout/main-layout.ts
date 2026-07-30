@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { Header } from './header/header';
 import { Sidebar } from './sidebar/sidebar';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 /**
  * Layout applicatif affiché sur toutes les pages sauf la connexion :
@@ -10,7 +11,7 @@ import { Sidebar } from './sidebar/sidebar';
  */
 @Component({
   selector: 'app-main-layout',
-  imports: [RouterOutlet, Header, Sidebar],
+  imports: [RouterOutlet, Header, Sidebar, BreadcrumbComponent],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss',
 })

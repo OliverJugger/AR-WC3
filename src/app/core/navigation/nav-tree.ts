@@ -43,3 +43,44 @@ export function collectLeafRoutes(nodes: NavTreeNode[]): NavLeafRoute[] {
   }
   return leaves;
 }
+
+export interface MenuNode {
+  name: string;
+  code_arthus: string;
+  route?: string;
+  children?: MenuNode[];
+}
+
+/**
+ * Recherche récursive du chemin (liste de noeuds) menant à l'élément
+ * dont le code_arthus correspond, en partant de la racine.
+ */
+function findPath(nodes: MenuNode[], codeArthus: string, path: MenuNode[] = []): MenuNode[] | null {
+  for (const node of nodes) {
+    const currentPath = [...path, node];
+
+    if (node.code_arthus === codeArthus) {
+      return currentPath;
+    }
+
+    if (node.children?.length) {
+      const found = findPath(node.children, codeArthus, currentPath);
+      if (found) {
+        return found;
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Retourne la chaîne "Parent le plus haut > ... > Élément"
+ * pour un code_arthus donné, ou null si non trouvé.
+ */
+export function getBreadcrumb(tree: MenuNode[], codeArthus: string): string | null {
+  const path = findPath(tree, codeArthus);
+  if (!path) {
+    return null;
+  }
+  return path.slice(0, -1).map(n => n.name).join(' > ');
+}

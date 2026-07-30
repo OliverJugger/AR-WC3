@@ -1,0 +1,24 @@
+<nav aria-label="Fil d'Ariane" class="breadcrumb">
+  <ol class="breadcrumb__list">
+    @for (segment of breadcrumbService.segments$ | async; track $index; let last = $last) {
+      <li class="breadcrumb__item">
+        @if ($index > 0) {
+          <span class="breadcrumb__separator" aria-hidden="true">›</span>
+        }
+
+        @if (segment.clickable && !last) {
+          <a [routerLink]="segment.url" class="breadcrumb__link">
+            {{ segment.label }}
+          </a>
+        } @else {
+          <span
+            class="breadcrumb__text"
+            [class.breadcrumb__text--current]="last"
+          >
+            {{ segment.label }}
+          </span>
+        }
+      </li>
+    }
+  </ol>
+</nav>

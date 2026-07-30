@@ -3,8 +3,6 @@
 }
 
 table {
-
-
   tr:nth-child(even) {
     background-color: #f5f5f5;
   }
@@ -26,7 +24,7 @@ table {
 .dossier-table-card {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding-inline: 20px;
   gap: 8px;
   background-color: var(--mat-card-elevated-container-color, var(--mat-sys-surface-container-low));
 

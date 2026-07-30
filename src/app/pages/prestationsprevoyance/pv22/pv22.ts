@@ -20,14 +20,10 @@ import { environment } from '../../../../environments/environment';
 import { DossierSearchApi } from './dossier-search-api';
 import { DossierMockService } from './dossier-mock.service';
 import { DossierSinistreApiService } from './dossier-sinistre-api.service';
-import {
-  DossierSinistre,
-  DossierSinistreCriteria,
-  DossierSortField,
-} from './dossier.model';
+import { DossierSinistre, DossierSinistreCriteria, DossierSortField } from './dossier.model';
 import { PaginatorComponent } from '../../../shared/paginator/paginator.component';
 import { RouterLink } from '@angular/router';
-import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-dossier-table',
@@ -51,6 +47,7 @@ import { MatMenu, MatMenuModule } from '@angular/material/menu';
     MatTooltipModule,
     MatMenuModule,
     RouterLink,
+    MatMenuTrigger
   ],
   templateUrl: './pv22.html',
   styleUrl: './pv22.scss',
@@ -71,7 +68,9 @@ export class Pv22 implements OnInit, OnDestroy {
   private readonly destroy$ = new Subject<void>();
 
   @ViewChild(MatSort) sort?: MatSort;
-
+  @ViewChild(MatMenuTrigger) matMenuTrigger!: MatMenuTrigger;
+  menuPosition = { x: 0, y: 0 };
+  
   readonly displayedColumns: string[] = [
     'numeroDossier',
     'numeroAssure',
@@ -128,6 +127,16 @@ export class Pv22 implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  /** Déclenché par clic sur icon "more_vert" sur une ligne du tableau */
+  onMenuButtonClick(event: MouseEvent, row: any) {
+    this.openMenuAt(event, row);
+  }
+  
+  /** Déclenché par clic droit sur une ligne du tableau */
+  onContextMenu(event: MouseEvent, row: any) {
+    this.openMenuAt(event, row);
   }
 
   /** Déclenché par le champ "Rechercher" : revient à la première page. */
@@ -209,6 +218,18 @@ export class Pv22 implements OnInit, OnDestroy {
       });
   }
 
+  private openMenuAt(event: MouseEvent, row: any) {
+    event.preventDefault();
+    event.stopPropagation();
+    this.menuPosition.x = event.clientX;
+    this.menuPosition.y = event.clientY;
+    this.matMenuTrigger.menuData = { row };
+  
+    // fermer puis rouvrir pour forcer le repositionnement si déjà ouvert ailleurs
+    this.matMenuTrigger.closeMenu();
+    setTimeout(() => this.matMenuTrigger.openMenu());
+  }
+  
   private toIsoDate(value: Date | null): string | undefined {
     return value ? formatDate(value, 'yyyy-MM-dd', 'en-US') : undefined;
   }

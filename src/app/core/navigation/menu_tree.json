@@ -1629,6 +1629,11 @@
         "code_arthus": "PP10",
         "children": [
           {
+            "name": "Dossier sinistre (b)",
+            "code_arthus": "PV10B",
+            "route": "prestationsprevoyance/pv10b"
+          },
+          {
             "name": "Liste des dossiers sinistre",
             "code_arthus": "PV22",
             "route": "prestationsprevoyance/pv22"
@@ -1637,11 +1642,6 @@
             "name": "Liste des dossiers d'un assuré",
             "code_arthus": "PV27",
             "route": "prestationsprevoyance/pv27"
-          },
-          {
-            "name": "Dossier sinistre (b)",
-            "code_arthus": "PV10B",
-            "route": "prestationsprevoyance/pv10b"
           },
           {
             "name": "Liste des dossiers d'un contrat",

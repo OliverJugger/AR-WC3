@@ -30,3 +30,38 @@
 .username {
   font-weight: 500;
 }
+
+// RUBAN ENVIONNEMENT 
+
+// Fenêtre qui masque le débordement du ruban : sa taille définit
+// la "zone de coin" dans laquelle le ruban est visible.
+.env-ribbon-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  pointer-events: none; // ne bloque pas les clics sous le ruban
+  z-index: 20;
+}
+
+.env-ribbon {
+  position: absolute;
+  width: 150px;           // plus large que la zone, pour dépasser des 2 côtés
+  top: 18px;
+  right: -38px;
+  transform: rotate(45deg);
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 0;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);  
+}
+
+.env-mock {
+  background-color: #f9a825;
+  color: #412402; // meilleur contraste sur fond jaune/orange
+}

@@ -1,6 +1,6 @@
 import { Route, Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth-guard';
-import { collectLeafRoutes, NAV_TREE } from './core/navigation/nav-tree';
+import { collectLeafRoutes, getBreadcrumb, NAV_TREE } from './core/navigation/nav-tree';
 
 /**
  * Routes générées automatiquement à partir des feuilles de `NAV_TREE`
@@ -15,6 +15,7 @@ const navTreeRoutes: Routes = collectLeafRoutes(NAV_TREE)
           path: leaf.path,
           loadComponent: () => import('./pages/prestationsprevoyance/pv22/pv22').then((m) => m.Pv22),
           title: leaf.title,
+          data: { hierarchy: getBreadcrumb(NAV_TREE, leaf.code_arthus), title: leaf.title },
       };
     }
 
@@ -23,6 +24,7 @@ const navTreeRoutes: Routes = collectLeafRoutes(NAV_TREE)
           path: leaf.path,
           loadComponent: () => import('./pages/prestationsprevoyance/pv10b/pv10b').then((m) => m.Pv10b),
           title: leaf.title,
+          data: { hierarchy: getBreadcrumb(NAV_TREE, leaf.code_arthus), title: leaf.title },
       };
     }
 
@@ -31,7 +33,7 @@ const navTreeRoutes: Routes = collectLeafRoutes(NAV_TREE)
       loadComponent: () =>
         import('./shared/page-placeholder/page-placeholder').then((m) => m.PagePlaceholder),
       title: leaf.title,
-      data: { title: leaf.title },
+      data: { hierarchy: getBreadcrumb(NAV_TREE, leaf.code_arthus), title: leaf.title },
     };
 });
 
@@ -51,6 +53,7 @@ export const routes: Routes = [
         path: 'menu',
         loadComponent: () => import('./home/home').then((m) => m.Home),
         title: 'Accueil',
+        data: { hierarchy: '', title: 'Accueil' },
       },
       ...navTreeRoutes,
     ],

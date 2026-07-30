@@ -11,7 +11,7 @@
  */
 export const environment = {
   production: false,
-  envName: 'MOCK',
-  useMock: true,
-  apiUrl: 'http://localhost:3001',
+  envName: 'PREPROD',
+  useMock: false,
+  apiUrl: 'http://localhost:8080',
 };
